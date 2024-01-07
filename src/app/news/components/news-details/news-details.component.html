@@ -1,0 +1,23 @@
+<section class="news-details-section">
+  <div class="container" *ngIf="!hasError">
+    <div class="details-container">
+      <p class="title">{{ newDetails?.title }}</p>
+      <p class="date">
+        Date: <span>{{ newDetails?.date }}</span>
+      </p>
+      <div class="image-container">
+        <img
+          [src]="newDetails?.image_url"
+          [alt]="newDetails?.title"
+          class="imgFull"
+        />
+      </div>
+
+      <p class="brief">{{ newDetails?.brief }}</p>
+    </div>
+  </div>
+  <app-status
+    *ngIf="!newDetails"
+    status="{{ hasError ? 'Error' : 'No Content' }}"
+  ></app-status>
+</section>

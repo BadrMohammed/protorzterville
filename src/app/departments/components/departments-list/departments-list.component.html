@@ -1,0 +1,23 @@
+<section class="department-list-section">
+  <div class="container" *ngIf="!hasError">
+    <div class="search-result-text">
+      <img
+        src="../../../../assets/Fe-kit/svg/search-result-secondary.svg"
+        alt="search result icon"
+      />
+      <span>8 Results</span>
+    </div>
+    <div class="card-container">
+      <div class="card-item" *ngFor="let department of departments">
+        <app-department-card [department]="department">
+          <div class="hover" hover></div
+        ></app-department-card>
+      </div>
+    </div>
+  </div>
+
+  <app-status
+    *ngIf="!departments?.length"
+    status="{{ hasError ? 'Error' : 'No Content' }}"
+  ></app-status>
+</section>

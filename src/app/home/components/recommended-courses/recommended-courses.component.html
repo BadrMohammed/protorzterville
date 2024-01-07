@@ -1,0 +1,27 @@
+<section class="section-recommended">
+  <div class="container">
+    <h4 class="section-title">Recommended Courses</h4>
+    <h5 class="section-content">Our Recommended seminars/courses</h5>
+
+    <app-slider
+      [hasPagination]="false"
+      [hasNavigation]="false"
+      [buttonTypeClassName]="'primary'"
+      [nextButtonClassName]="'slider-next-button'"
+      [prevButtonClassName]="'slider-prev-button'"
+      [slidesPerView]="1"
+      [itemLength]="data.length"
+    >
+      <swiper-slide *ngFor="let course of data" lazy="true">
+        <app-course-card
+          [course]="course"
+          [customCardClassName]="'recommended-card'"
+          [labelPosition]="2"
+          [imageContainerClassName]="'image-container'"
+          [textContainerClassName]="'text-container'"
+          [disableImageHover]="true"
+        ></app-course-card>
+      </swiper-slide>
+    </app-slider>
+  </div>
+</section>

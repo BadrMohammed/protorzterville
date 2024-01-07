@@ -1,0 +1,29 @@
+<section class="courses-list-section">
+  <div class="container" *ngIf="!hasError">
+    <div class="card-container">
+      <div class="card-item" *ngFor="let course of data">
+        <app-course-card
+          [course]="course"
+          [customCardClassName]="'course-card'"
+        ></app-course-card>
+      </div>
+    </div>
+
+    <div class="more-button">
+      <button>
+        <p>More Courses</p>
+        <div class="img-container">
+          <img
+            src="../../../../assets/Fe-kit/svg/bottom-arrow-white.png"
+            alt="bottom-arrow-white"
+          />
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <app-status
+    *ngIf="!data?.length"
+    status="{{ hasError ? 'Error' : 'No Content' }}"
+  ></app-status>
+</section>

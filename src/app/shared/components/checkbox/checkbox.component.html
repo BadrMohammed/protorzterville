@@ -1,0 +1,6 @@
+<div [ngClass]="['form-check', checkBoxContainerClass]">
+  <input type="checkbox" class="form-check-input" id="{{ inputProps.name }}" />
+  <label class="form-check-label" for="{{ inputProps.name }}" *ngIf="label">{{
+    label
+  }}</label>
+</div>

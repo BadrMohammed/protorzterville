@@ -1,0 +1,15 @@
+<div class="external-auth-contaainer">
+  <app-button [buttonLabel]="serviceType.title" [className]="'primary'">
+    <div class="img-container">
+      <img
+        class="imgFull"
+        src="{{
+          serviceType.type === 1
+            ? '../../../../assets/Fe-kit/svg/facebook-circle.svg'
+            : '../../../../assets/Fe-kit/svg/google.svg'
+        }}"
+        alt="external-auth-icon"
+      />
+    </div>
+  </app-button>
+</div>

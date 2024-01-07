@@ -1,0 +1,13 @@
+.form-check {
+  @include inline-block;
+  align-items: center;
+  // & input[type="checkbox"] {
+  //   outline-color: get-color("checkbox-border");
+  //   background-color: transparent;
+  // }
+  & label {
+    margin-inline-start: get-margin(l) + 3;
+    font: normal normal normal toRem(16) "OpenSans-Regular";
+    color: get-color("meduim-gray");
+  }
+}

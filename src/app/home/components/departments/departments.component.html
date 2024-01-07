@@ -1,0 +1,38 @@
+<section class="section-departments" id="departments">
+  <div class="parent-container">
+    <div class="inner-container">
+      <div class="text-container">
+        <p class="title" [innerHTML]="departments.title"></p>
+        <p class="description">
+          {{ departments.description }}
+        </p>
+        <!-- <div class="button-container">
+          <app-button
+            [className]="'primary'"
+            [hasIcon]="false"
+            [buttonLabel]="'All Programs'"
+            [routerLink]="'/virtual-program'"
+          >
+          </app-button>
+        </div> -->
+      </div>
+    </div>
+    <div class="card-container">
+      <div class="card-box card-box1">
+        <div class="card-item" *ngFor="let department of dataOne">
+          <app-department-card [department]="department"></app-department-card>
+        </div>
+      </div>
+      <div class="card-box card-box2">
+        <div class="card-item" *ngFor="let department of dataTwo">
+          <app-department-card [department]="department"></app-department-card>
+        </div>
+      </div>
+      <div class="card-box card-box3">
+        <div class="card-item" *ngFor="let department of dataThree">
+          <app-department-card [department]="department"></app-department-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

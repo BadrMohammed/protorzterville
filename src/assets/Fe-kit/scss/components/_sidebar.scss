@@ -1,0 +1,45 @@
+.wide-modal-dialog {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  margin: 0 !important;
+
+  & .modal-content {
+    height: 100%;
+    max-height: 100%;
+    border-radius: 0;
+    border: 0;
+  }
+}
+aside {
+  & .secondaryColor {
+    position: absolute;
+    left: 0;
+    top: toRem(448);
+    width: toRem(86);
+    height: toRem(86);
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 0;
+    z-index: 1000;
+
+    &:not([disabled]):hover {
+      background: get-color("primary");
+      color: get-color("white");
+      border-color: get-color("primary");
+    }
+
+    & .button-container {
+      @include column-block-center;
+      gap: toRem(10);
+      & img {
+        width: toRem(34.55);
+        height: toRem(20.59);
+      }
+      & p {
+        margin: 0;
+        font: normal normal 300 toRem(18) "Poppins-Regular";
+      }
+    }
+  }
+}

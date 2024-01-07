@@ -1,0 +1,70 @@
+<header>
+  <div class="image-container">
+    <img
+      class="imgFull"
+      src="../../../assets/Fe-kit/images/header-banner.png"
+      alt=""
+    />
+    <div class="hover"></div>
+  </div>
+  <div class="container custom-container">
+    <div class="nav-wrapper">
+      <app-navbar [isViewSearch]="activePage?.isViewSearch"></app-navbar>
+      <div class="bottom-nav">
+        <h1 class="title">{{ activePage?.title }}</h1>
+
+        <div class="options">
+          <nav
+            aria-label="breadcrumb"
+            class="{{ activePage?.isViewSearch && 'breadcrumb-nav' }}"
+            *ngIf="activePage?.breadcrumb?.length"
+          >
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a [routerLink]="'/'">Home</a>
+              </li>
+
+              <li
+                aria-current="page"
+                class="breadcrumb-item seondary-item"
+                *ngFor="let breadcrumb of activePage.breadcrumb"
+              >
+                <a
+                  [class]="!breadcrumb?.url ? 'active' : ''"
+                  [routerLink]="breadcrumb?.url ? breadcrumb?.url : null"
+                  >{{ breadcrumb?.label }}
+                </a>
+              </li>
+            </ol>
+          </nav>
+
+          <div class="share">
+            <p class="title">Share this Program</p>
+            <img
+              class="facebook-icon"
+              src="../../../assets/Fe-kit/svg/facebook.svg"
+              alt="facebook icon"
+            />
+            <img
+              class="twitter-icon"
+              src="../../../assets/Fe-kit/svg/twitter.svg"
+              alt="twitter icon"
+            />
+
+            <div class="printer">
+              <img
+                src="../../../assets/Fe-kit/svg/printer.svg"
+                alt="facebook icon"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="search-wrapper">
+      <div class="search-card">
+        <app-search *ngIf="activePage?.isViewSearch"></app-search>
+      </div>
+    </div> -->
+  </div>
+</header>

@@ -1,0 +1,15 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<app-header *ngIf="isViewHeader" [activePage]="activePage"></app-header>
+<main>
+  <!-- <app-sidebar></app-sidebar> -->
+  <router-outlet></router-outlet>
+  <ngx-spinner type="ball-scale-multiple"></ngx-spinner>
+</main>
+<app-footer *ngIf="isViewFooter"></app-footer>

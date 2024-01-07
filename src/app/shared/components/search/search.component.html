@@ -1,0 +1,15 @@
+<div [ngClass]="['search ', searchClass]">
+  <p class="search-title">Filter by:</p>
+
+  <div *ngFor="let inputProps of searchForm" class="input-container">
+    <app-input
+      [inputProps]="inputProps"
+      inputContainerClass="{{
+        inputProps.type === 'text' ? 'search-text-input' : 'search-date-input'
+      }}"
+    ></app-input>
+  </div>
+
+  <button class="filter-button">Filter</button>
+  <button class="clear-button">Clear</button>
+</div>

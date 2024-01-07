@@ -1,0 +1,39 @@
+<section class="section-internship">
+  <div class="internship-container">
+    <div class="internship-text-container">
+      <h4 class="section-title">{{ data?.title }}</h4>
+      <h5 class="section-content">
+        {{ data?.brief }}
+      </h5>
+
+      <p class="seminars-text">
+        {{ data?.subTitle }}
+      </p>
+      <p class="seminars-desc">
+        {{ data?.description }}
+      </p>
+
+      <app-button
+        [className]="'primary'"
+        [hasIcon]="false"
+        [buttonLabel]="'Read More'"
+        [buttonTitleClassName]="'section-internship-button-title'"
+        [routerLink]="['/courses']"
+      >
+      </app-button>
+    </div>
+
+    <div class="internship-image-container">
+      <div class="book-image">
+        <img class="imgFull" [src]="data?.image_url" alt="{{ data?.title }}" />
+      </div>
+      <div class="link-image">
+        <img
+          class="imgFull"
+          src="../../../assets/Fe-kit/images/blue-image.png"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+</section>

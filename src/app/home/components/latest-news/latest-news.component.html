@@ -1,0 +1,54 @@
+<section class="section-news">
+  <div class="section-container">
+    <div class="text-container">
+      <h4 class="section-title">Latest News</h4>
+      <h5 class="section-content">Check our latest news and activities</h5>
+      <div class="button-navigation">
+        <button [ngClass]="['secondary', 'prev-button']" #backBtn>
+          <i class="bi bi-arrow-left"></i>
+        </button>
+
+        <button [ngClass]="['secondary', 'next-button']" #nextBtn>
+          <i class="bi bi-arrow-right"></i>
+        </button>
+      </div>
+      <div [ngClass]="['bootom-section-button', 'news-button']">
+        <app-button
+          [className]="'primary'"
+          [hasIcon]="false"
+          [buttonLabel]="'Check all News'"
+          [buttonTitleClassName]="'button-title'"
+          [routerLink]="['/news']"
+        >
+        </app-button>
+      </div>
+    </div>
+    <div class="slider-container">
+      <app-slider
+        [hasPagination]="false"
+        [hasNavigation]="false"
+        [containerSlider]="'news-slider'"
+        [hideCustomButtons]="true"
+        [slidesPerView]="innerWidth <= 1023 ? 1 : 2"
+        [itemLength]="data.length"
+      >
+        <swiper-slide *ngFor="let newItem of data" lazy="true">
+          <app-news-card
+            [newItem]="newItem"
+            [dimensionClass]="'news-card-class'"
+          ></app-news-card>
+        </swiper-slide>
+      </app-slider>
+
+      <div class="button-navigation button-navigation-mobile">
+        <button [ngClass]="['secondary', 'prev-button']" #backBtn>
+          <i class="bi bi-arrow-left"></i>
+        </button>
+
+        <button [ngClass]="['secondary', 'next-button']" #nextBtn>
+          <i class="bi bi-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

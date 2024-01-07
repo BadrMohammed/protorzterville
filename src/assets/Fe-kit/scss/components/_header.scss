@@ -1,0 +1,267 @@
+header {
+  width: 100%;
+  height: toRem(420);
+  position: relative;
+  & .image-container {
+    @include zero-dimensions;
+    height: 90%;
+    mix-blend-mode: normal;
+    position: absolute;
+
+    & img {
+      object-fit: cover;
+    }
+
+    & .hover {
+      @include hover;
+      background: transparent linear-gradient(71deg, #13276b 0%, #00000000 100%)
+        0% 0% no-repeat padding-box;
+    }
+  }
+
+  & .container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    & .nav-wrapper {
+      height: 80%;
+      @include column-block;
+      justify-content: space-between;
+      position: relative;
+      & .bottom-nav {
+        @include column-block;
+        justify-content: space-between;
+        position: relative;
+        width: 100%;
+
+        & .title {
+          font: normal normal 600 toRem(42) "Poppins-Regular";
+          color: get-color("white");
+          margin-bottom: toRem(10);
+        }
+        & .options {
+          @include inline-block;
+          justify-content: space-between;
+          height: fit-content;
+          align-items: center;
+          margin-bottom: toRem(39);
+          flex-wrap: wrap;
+
+          & nav {
+            & .breadcrumb {
+              margin: 0;
+            }
+            & .active {
+              color: get-color("white");
+            }
+            & .seondary-item {
+              @include inline-block-center;
+              &::before {
+                content: "";
+                content: url(../../svg/breadcrum-arrow.svg);
+                margin-inline: toRem(5);
+              }
+            }
+            & .breadcrumb-item {
+              & a {
+                font: normal normal normal toRem(18) "OpenSans-Regular";
+                color: get-color("hr-line-color");
+                text-decoration: none;
+              }
+              & .active {
+                color: get-color("white");
+              }
+            }
+          }
+
+          & .share {
+            @include inline-block;
+            align-items: center;
+            gap: toRem(24.5) toRem(20.5);
+
+            & .title {
+              margin: 0;
+              font: normal normal normal toRem(18) "OpenSans-Regular";
+              color: get-color("white");
+            }
+
+            & .facebook-icon {
+              cursor: pointer;
+
+              width: toRem(12);
+              height: toRem(22);
+            }
+
+            & .twitter-icon {
+              cursor: pointer;
+
+              width: toRem(27);
+              height: toRem(22);
+            }
+            & .printer {
+              @include inline-block-center;
+              width: toRem(60);
+              height: toRem(60);
+              border: 1px solid get-color("white");
+              background: get-color("white");
+              border-radius: get-border-radius(s) + 3;
+              cursor: pointer;
+              margin-inline-start: toRem(25.5);
+            }
+          }
+        }
+
+        & .breadcrumb-nav {
+          margin-bottom: toRem(49);
+        }
+      }
+    }
+    & .search-wrapper {
+      height: 20%;
+    }
+  }
+}
+
+//respinsive
+
+@media (min-width: $small_desktop) and (max-width: $medium_desktop) {
+  header {
+    height: toRem(320);
+
+    & .container {
+      & .nav-wrapper {
+        & .bottom-nav {
+          & .title {
+            font-size: toRem(24);
+            margin-bottom: toRem(20);
+          }
+          & .options {
+            background-color: blue;
+            margin-bottom: toRem(60);
+          }
+
+          & .breadcrumb-nav {
+            margin-bottom: toRem(40);
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: $tablet) and (max-width: $large_tablet) {
+  header {
+    height: toRem(320);
+
+    & .container {
+      & .nav-wrapper {
+        & .bottom-nav {
+          padding-inline: get-padding(xl);
+
+          & .title {
+            font-size: toRem(24);
+            margin-bottom: toRem(20);
+          }
+          & .options {
+            // margin-bottom: toRem(40);
+            align-items: center;
+
+            & nav {
+              & .breadcrumb-item {
+                & a {
+                  font-size: toRem(16);
+                }
+              }
+            }
+
+            & .share {
+              gap: toRem(14);
+
+              & .title {
+                font-size: toRem(16);
+              }
+
+              & .printer {
+                @include inline-block-center;
+                width: toRem(40);
+                height: toRem(40);
+                margin-inline-start: toRem(15);
+
+                & img {
+                  width: toRem(20);
+                }
+              }
+            }
+          }
+
+          & .breadcrumb-nav {
+            margin-bottom: 0;
+            // margin-bottom: toRem(20);
+          }
+        }
+      }
+      & .search-wrapper {
+        & .search-card {
+          display: none;
+        }
+      }
+    }
+  }
+}
+@media (min-width: $small_mobile) and (max-width: $mobile) {
+  header {
+    height: toRem(320);
+
+    & .container {
+      & .nav-wrapper {
+        & .bottom-nav {
+          padding-inline: get-padding(l);
+          & .title {
+            font-size: toRem(24);
+            margin-bottom: toRem(20);
+          }
+          & .options {
+            margin-bottom: toRem(40);
+            gap: toRem(15);
+
+            & nav {
+              & .breadcrumb-item {
+                & a {
+                  font-size: toRem(12);
+                }
+              }
+            }
+
+            & .share {
+              gap: toRem(14);
+
+              & .title {
+                font-size: toRem(14);
+              }
+
+              & .printer {
+                @include inline-block-center;
+                width: toRem(40);
+                height: toRem(40);
+                margin-inline-start: toRem(15);
+
+                & img {
+                  width: toRem(20);
+                }
+              }
+            }
+          }
+
+          & .breadcrumb-nav {
+            margin-bottom: toRem(20);
+          }
+        }
+      }
+      & .search-wrapper {
+        & .search-card {
+          display: none;
+        }
+      }
+    }
+  }
+}

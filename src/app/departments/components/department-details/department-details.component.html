@@ -1,0 +1,65 @@
+<section class="department-details-section">
+  <div class="container">
+    <div class="selected-course" id="selected-course" * ngIf="{{ selectItem }}">
+      <div class="text-container">
+        <div class="actions">
+          <div class="buttons">
+            <app-button
+              [className]="'secondary category-button'"
+              [buttonLabel]="
+                selectItem ? selectItem.category.category_name : ''
+              "
+            ></app-button>
+            <app-button
+              [className]="'secondary'"
+              [buttonLabel]="'Subcategory'"
+            ></app-button>
+          </div>
+          <div class="rate">
+            <p class="rate-text">
+              {{ selectItem && selectItem.rate.rates_count }} ({{
+                selectItem && selectItem.rate.rates_score
+              }})
+            </p>
+            <img src="../../../../assets/Fe-kit/svg/star.svg" alt="star-icon" />
+          </div>
+        </div>
+        <p class="title">{{ selectItem && selectItem.title }}</p>
+
+        <div class="details">
+          <div class="item">
+            <p class="key">Supported Language:</p>
+            <p class="value">English, Arabic</p>
+          </div>
+          <div class="item">
+            <p class="key">Start date:</p>
+            <p class="value">
+              {{ selectItem ? selectItem.start_date || selectItem.date : "" }}
+            </p>
+          </div>
+          <div class="item">
+            <p class="key">End date:</p>
+            <p class="value">
+              {{ selectItem ? selectItem.end_date || selectItem.date : "" }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="image-container">
+        <img
+          class="imgFull"
+          src="{{ selectItem && selectItem.image_url }}"
+          alt="{{ selectItem && selectItem.title }}"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-12 column" *ngFor="let course of data">
+        <app-course-card
+          [course]="course"
+          [handleRead]="onRedMore"
+        ></app-course-card>
+      </div>
+    </div>
+  </div>
+</section>

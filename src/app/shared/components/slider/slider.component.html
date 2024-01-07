@@ -1,0 +1,30 @@
+<div [ngClass]="['swiper-wrapper', containerSlider]">
+  <swiper-container
+    [slidesPerView]="slidesPerView"
+    :space-between="33"
+    mousewheel-force-to-axis="true"
+    pagination="{{ hasPagination }}"
+    swiperElement
+    navigation="{{ hasNavigation }}"
+    pagination="false"
+    #swiper
+  >
+    <ng-content></ng-content>
+  </swiper-container>
+  <button
+    *ngIf="!hideCustomButtons"
+    [ngClass]="['prev-button', prevButtonClassName, buttonTypeClassName]"
+    #backBtn
+  >
+    <i class="bi bi-arrow-left"></i>
+  </button>
+
+  <button
+    *ngIf="!hideCustomButtons"
+    [ngClass]="['next-button', nextButtonClassName, buttonTypeClassName]"
+    #nextBtn
+  >
+    <i class="bi bi-arrow-right"></i>
+    <!-- <i class="bi bi-arrow-right-secondary"></i> -->
+  </button>
+</div>

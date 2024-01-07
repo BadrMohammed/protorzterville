@@ -1,0 +1,18 @@
+<button
+  [ngClass]="className"
+  [routerLink]="routerLink && routerLink"
+  (click)="onClick()"
+  type="{{ buttonType }}"
+>
+  <div class="button-container">
+    <ng-content></ng-content>
+    <img
+      *ngIf="hasIcon"
+      alt="arrow-right-secondary"
+      src="../../../../assets/Fe-kit/svg/arrow-right-secondary.svg"
+    />
+    <p [ngClass]="['button-title', buttonTitleClassName]" *ngIf="buttonLabel">
+      {{ buttonLabel }}
+    </p>
+  </div>
+</button>

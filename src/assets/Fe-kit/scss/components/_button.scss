@@ -1,0 +1,109 @@
+.primary {
+  @include column-block-center;
+  width: toRem(274);
+  height: toRem(64);
+  padding: get-padding(17) get-paddings(75);
+  background: get-color("primary");
+  border-radius: get-border-radius(xxxxl);
+  font: normal normal normal toRem(22) "OpenSans-Regular";
+  color: get-color("white");
+  border: 1px solid transparent;
+  transition: all 0.3s ease-in-out;
+
+  &:not([disabled]):hover {
+    background: get-color("white");
+    border: 1px solid get-color("primary");
+    color: get-color("primary");
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.secondary {
+  @include column-block-center;
+  background: get-color("white");
+  color: get-color("primary");
+  border: 1px solid get-color("primary");
+
+  width: toRem(274);
+  height: toRem(64);
+  padding: get-padding(17) get-paddings(75);
+  border-radius: get-border-radius(xxxxl);
+  font: normal normal normal toRem(22) "OpenSans-Regular";
+  transition: all 0.3s ease-in-out;
+
+  &:not([disabled]):hover {
+    background: get-color("primary");
+    border: 1px solid transparent;
+    color: get-color("white");
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.secondaryColor {
+  @include column-block-center;
+  background: get-color("secondary");
+  color: get-color("white");
+  border: 1px solid get-color("secondary");
+  width: toRem(274);
+  height: toRem(64);
+  padding: get-padding(17) get-paddings(75);
+  border-radius: get-border-radius(xxxxl);
+  font: normal normal normal toRem(22) "OpenSans-Regular";
+  transition: all 0.3s ease-in-out;
+
+  &:not([disabled]):hover {
+    transition: all 0.3s ease-in-out;
+    background: get-color("white");
+    color: get-color("secondary");
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.button-container {
+  @include inline-block;
+  align-items: center;
+  justify-content: space-between;
+  gap: toRem(10);
+}
+
+.button-title {
+  margin: 0;
+  font: normal normal 600 1rem "OpenSans-Regular";
+}
+
+button:disabled {
+  background-color: get-color("light-gray");
+}
+
+//respinsive
+
+@media (min-width: $small_desktop) and (max-width: $medium_desktop) {
+  .primary,
+  .secondary,
+  .secondaryColor {
+    width: toRem(173);
+    height: toRem(44);
+    padding: get-padding(10) get-paddings(41);
+    font-size: toRem(18);
+  }
+}
+@media (min-width: $tablet) and (max-width: $large_tablet) {
+  .primary,
+  .secondary,
+  .secondaryColor {
+    width: toRem(173);
+    height: toRem(44);
+    padding: get-padding(10) get-paddings(41);
+    font-size: toRem(18);
+  }
+}
+@media (min-width: $small_mobile) and (max-width: $mobile) {
+  .primary,
+  .secondary,
+  .secondaryColor {
+    width: toRem(148);
+    height: toRem(34);
+    padding: get-padding(8) get-paddings(42);
+    font-size: toRem(12);
+  }
+}

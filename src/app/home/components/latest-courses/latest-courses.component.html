@@ -1,0 +1,27 @@
+<section class="section-latest">
+  <div class="container">
+    <h4 class="section-title">Latest Offers</h4>
+    <h5 class="section-content">Our latest offers</h5>
+
+    <div class="card-container">
+      <div class="card-item" *ngFor="let course of data; let i = index">
+        <app-course-card
+          *ngIf="i < 3"
+          [course]="course"
+          [labelPosition]="1"
+        ></app-course-card>
+      </div>
+    </div>
+
+    <!-- <div class="bootom-section-button">
+      <app-button
+        [className]="'primary'"
+        [hasIcon]="false"
+        [buttonLabel]="'Check all Offers'"
+        [buttonTitleClassName]="'section-latest-button-title'"
+        [routerLink]="['/courses']"
+      >
+      </app-button>
+    </div> -->
+  </div>
+</section>

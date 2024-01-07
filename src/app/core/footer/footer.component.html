@@ -1,0 +1,94 @@
+<footer class="footer">
+  <div class="footer-wrapper">
+    <button
+      class="explore-buuton"
+      *ngIf="viewBackToTopBtn"
+      (click)="handleScroll()"
+    >
+      <p class="explore-buuton-text">Back to top</p>
+      <img src="../../../../assets/Fe-kit/svg/line.svg" alt="line" />
+    </button>
+    <div class="row justify-content-center">
+      <div class="col-xl-12">
+        <div class="footer-container">
+          <div class="subscribe">
+            <form>
+              <label for="email">Subscribe to our newsletter</label>
+              <div class="field-container">
+                <app-input
+                  [inputProps]="{
+                    name: 'email',
+                    type: 'email',
+                    placeholder: 'Your email address here',
+                    required: true
+                  }"
+                >
+                </app-input>
+                <app-button
+                  [buttonLabel]="'Subscribe'"
+                  [className]="'secondaryColor'"
+                ></app-button>
+              </div>
+            </form>
+          </div>
+          <hr />
+
+          <div class="feeds">
+            <a *ngFor="let feed of feeds; let i = index">
+              <span>
+                {{ feed.title }}
+              </span>
+              <img
+                *ngIf="i !== feeds.length - 1"
+                src="../../../assets/Fe-kit/svg/social-line.svg"
+                class="line"
+                alt="line icon"
+              />
+            </a>
+          </div>
+          <hr class="feeds-hr" />
+
+          <p class="copyright">All rights reserved © 2023 Link Development</p>
+
+          <div class="contacts">
+            <div class="social-links">
+              <p>Follow us</p>
+
+              <img
+                src="../../../assets/Fe-kit/svg/social-line.svg"
+                class="line"
+                alt="line icon"
+              />
+
+              <div class="social-container">
+                <a *ngFor="let social of socialLinks">
+                  <img
+                    src="{{ social.logo }}"
+                    alt="{{ social.title }}"
+                    class="{{ social.class }}"
+                /></a>
+              </div>
+            </div>
+            <div class="social-links access">
+              <p>Accessibility</p>
+              <img
+                src="../../../assets/Fe-kit/svg/social-line.svg"
+                class="line"
+                alt="line icon"
+              />
+              <div class="social-container">
+                <a *ngFor="let access of accessibilits">
+                  <img
+                    src="{{ access.logo }}"
+                    alt="{{ access.title }}"
+                    width="{{ access.width }}"
+                    height="{{ access.height }}"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

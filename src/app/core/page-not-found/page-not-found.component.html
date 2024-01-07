@@ -1,0 +1,15 @@
+<section class="section-page-not-found">
+  <div class="text-container">
+    <img class="not-found-image" [src]="noPageUrl" alt="404 logo" />
+    <p class="not-found-title">Page Not Found</p>
+    <p class="not-found-content">The Page you requested could not be Found</p>
+    <div class="button-container">
+      <app-button
+        [className]="'secondary'"
+        [buttonLabel]="'Back Home'"
+        [buttonTitleClassName]="'not-found-button-text'"
+        [routerLink]="['/']"
+      ></app-button>
+    </div>
+  </div>
+</section>

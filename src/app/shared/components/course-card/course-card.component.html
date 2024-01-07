@@ -1,0 +1,180 @@
+<div [ngClass]="['course-card', customCardClassName]">
+  <div
+    [ngClass]="['image-container', imageContainerClassName]"
+    [ngStyle]="{
+      background:
+        'transparent url(' +
+        course?.image_url +
+        ') 0% 0% no-repeat padding-box',
+      'background-size': 'cover',
+      'background-position': 'center center'
+    }"
+  >
+    <div *ngIf="disableImageHover === false" class="hover"></div>
+
+    <div class="badge-container" *ngIf="labelPosition === 1">
+      <div class="badge label">
+        {{ course?.category?.category_name || "General" }}
+      </div>
+      <div class="badge label badge-course">
+        {{ "Online Symposium" }}
+      </div>
+    </div>
+  </div>
+
+  <div [ngClass]="['text-container', textContainerClassName]">
+    <div class="badge label label2" *ngIf="labelPosition === 2">
+      {{ course?.title }}
+    </div>
+    <div
+      [ngClass]="[
+        'date-session-container',
+        labelPosition === 2 ? 'date-session-container2' : ''
+      ]"
+    >
+      <div class="date">
+        <img
+          src="../../../../assets/Fe-kit/svg/calendar.svg"
+          alt="calendar-icon"
+        />
+        <p>{{ course?.start_date + " " + course?.end_date }}</p>
+      </div>
+      <div class="session">
+        <img
+          src="../../../../assets/Fe-kit/svg/open-book-secondary.svg"
+          alt="open-book-icon"
+        />
+        <p>Cash payment</p>
+        <!-- <p>{{ course?.seminars_count }} Sessions</p> -->
+      </div>
+    </div>
+    <p class="title" [innerHTML]="course.title"></p>
+
+    <p class="content" [innerHTML]="course.brief"></p>
+
+    <hr [ngClass]="['line', labelPosition === 2 ? 'line2' : '']" />
+
+    <div
+      [ngClass]="[
+        'course-card-footer',
+        labelPosition === 2 ? 'course-card-footer2' : ''
+      ]"
+    >
+      <div class="rate">
+        <p class="rate-text">
+          {{ course?.rate?.rates_count }} ({{ course?.rate?.rates_score }})
+        </p>
+        <img src="../../../../assets/Fe-kit/svg/star.svg" alt="star-icon" />
+      </div>
+
+      <app-modal>
+        <div
+          action
+          [ngClass]="[
+            'course-card-button',
+            labelPosition === 2 ? 'course-card-button2' : ''
+          ]"
+        >
+          <app-button [className]="'secondary'" [buttonLabel]="'Booking'">
+          </app-button>
+        </div>
+        <div
+          body
+          style="
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          <div
+            style="
+              width: '400px';
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-direction: column;
+            "
+          >
+            <h3>Contact us</h3>
+            <div
+              style="
+                width: 80px;
+                height: 80px;
+                border-radius: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #dfdfdf;
+                margin-top: 30px;
+              "
+            >
+              <i class="bi bi-person-fill" style="font-size: 40px"></i>
+            </div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 20px;
+                margin-top: 20px;
+                font-size: 20px;
+                color: #2437ac;
+              "
+            >
+              Mr Mohammed Alaa
+            </div>
+
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 20px;
+                margin-top: 20px;
+                font-size: 20px;
+                color: #2437ac;
+              "
+            >
+              <i class="bi bi-telephone-plus-fill"></i>
+              <p style="margin: 0">+20 1097944603</p>
+            </div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 20px;
+                margin-top: 20px;
+                margin-top: 20px;
+                font-size: 20px;
+                color: #2437ac;
+              "
+            >
+              <i class="bi bi-whatsapp"></i>
+              <p style="margin: 0">+20 1097944603</p>
+            </div>
+          </div>
+        </div>
+      </app-modal>
+
+      <!-- <div
+        [ngClass]="[
+          'course-card-button',
+          labelPosition === 2 ? 'course-card-button2' : ''
+        ]"
+      >
+        <app-button
+          [className]="'secondary'"
+          [hasIcon]="true"
+          [routerLink]="!handleRead ? ['/courses', course.id] : null"
+          [buttonLabel]="'Read more'"
+          [item]="course"
+          [handleAction]="handleRead"
+        >
+        </app-button>
+      </div> -->
+    </div>
+  </div>
+</div>

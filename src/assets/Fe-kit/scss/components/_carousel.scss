@@ -1,0 +1,275 @@
+.carousel-container {
+  position: relative;
+  width: 100%;
+
+  & .image-container {
+    margin: 0 !important;
+    max-height: toRem(980);
+    min-height: toRem(529.5);
+    height: toRem(700);
+
+    & img {
+      max-height: toRem(980);
+      min-height: toRem(529.5);
+    }
+
+    position: relative;
+    & .hover {
+      @include hover;
+      max-height: toRem(980);
+      min-height: toRem(529.5);
+
+      z-index: 1;
+      background: transparent linear-gradient(49deg, #13276b 0%, #00000000 100%)
+        0% 0% no-repeat;
+    }
+  }
+
+  & .carousel-caption {
+    @include column-block-center;
+    @include zero-dimensions;
+    width: 100%;
+    padding: 0;
+    z-index: 100;
+
+    & .carousel-caption-container {
+      @include column-block;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: start;
+      align-items: flex-start;
+      justify-content: center;
+
+      & .text-container {
+        width: toRem(1022);
+        padding-block: get-padding(xl);
+        & .title {
+          font: normal normal bold toRem(80) "Poppins-Bold";
+          // margin-bottom: toRem(82);
+        }
+
+        & .brief {
+          font: normal normal 300 toRem(32) "OpenSans-Light";
+          margin-bottom: toRem(47);
+          width: toRem(867);
+        }
+
+        & .carousel-button {
+          width: 388px;
+          height: 80px;
+          font: normal normal normal toRem(26) "OpenSans-Regular";
+          background-color: get-color("#ffffff");
+          color: get-color("meduim-gray");
+          border-radius: get-border-radius(xxxxl);
+          transition: background-color 0.5s ease-in;
+          border: none;
+          margin-bottom: toRem(59.5);
+
+          &:hover {
+            background-color: get-color("meduim-gray");
+            border: 1px solid #fff;
+            color: get-color("white");
+            transition: background-color 0.5s ease-in;
+          }
+        }
+      }
+    }
+  }
+
+  & .carousel-control-next,
+  .carousel-control-prev {
+    display: none;
+  }
+
+  & .carousel-indicators {
+    @include column-block-center;
+    height: 100%;
+    position: absolute;
+    width: fit-content;
+    margin: 0;
+    top: 0;
+    right: 7%;
+    left: auto;
+
+    & button {
+      background-color: transparent;
+      width: toRem(26);
+      height: toRem(26);
+      border: 0;
+      margin-bottom: toRem(14.85);
+      border: 1px solid #fff !important;
+
+      &.active {
+        width: toRem(27);
+        height: toRem(26);
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+//respinsive
+
+@media (min-width: $small_desktop) and (max-width: $medium_desktop) {
+  .carousel-container {
+    & .image-container {
+      & img {
+      }
+
+      & .hover {
+      }
+    }
+    & .carousel-caption {
+      & .carousel-caption-container {
+        & .text-container {
+          width: 100%;
+          & .title {
+            font-size: toRem(50);
+            margin-bottom: toRem(23);
+          }
+
+          & .brief {
+            font-size: toRem(30);
+            // width: toRem(696);
+            margin-bottom: toRem(37);
+          }
+          & .carousel-button {
+            width: toRem(228);
+            height: toRem(54);
+            font-size: toRem(14);
+            margin-bottom: toRem(104);
+          }
+        }
+      }
+
+      & .explore-buuton {
+        & .explore-buuton-text {
+          font-size: toRem(16);
+        }
+        & img {
+          height: toRem(78);
+        }
+      }
+    }
+
+    & .carousel-indicators {
+      & button {
+        width: toRem(14);
+        height: toRem(15);
+        &.active {
+          width: toRem(15);
+          height: toRem(15);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $tablet) and (max-width: $large_tablet) {
+  .carousel-container {
+    & .image-container {
+      height: toRem(456);
+      & img {
+        height: toRem(456);
+      }
+
+      & .hover {
+        height: toRem(456);
+      }
+    }
+    & .carousel-caption {
+      & .carousel-caption-container {
+        & .text-container {
+          width: 100%;
+
+          & .title {
+            font-size: toRem(40);
+            margin-bottom: toRem(23);
+          }
+
+          & .brief {
+            font-size: toRem(22);
+            margin-bottom: toRem(37);
+            width: toRem(596);
+          }
+          & .carousel-button {
+            width: toRem(208);
+            height: toRem(44);
+            font-size: toRem(14);
+            margin-bottom: toRem(104);
+          }
+        }
+      }
+      & .explore-buuton {
+        & .explore-buuton-text {
+          font-size: toRem(16);
+        }
+        & img {
+          height: toRem(78);
+        }
+      }
+    }
+
+    & .carousel-indicators {
+      & button {
+        width: toRem(14);
+        height: toRem(15);
+        &.active {
+          width: toRem(15);
+          height: toRem(15);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $small_mobile) and (max-width: $mobile) {
+  .carousel-container {
+    & .carousel-caption {
+      & .carousel-caption-container {
+        padding-inline: get-padding(xl);
+
+        & .text-container {
+          width: 100%;
+          & .title {
+            font-size: toRem(24);
+            margin-bottom: toRem(22);
+          }
+
+          & .brief {
+            font-size: toRem(14);
+            margin-bottom: toRem(35);
+            width: 92%;
+          }
+          & .carousel-button {
+            width: toRem(190);
+            height: toRem(40);
+            font-size: toRem(12);
+            margin-bottom: toRem(115);
+          }
+        }
+      }
+
+      & .explore-buuton {
+        & .explore-buuton-text {
+          font-size: toRem(16);
+        }
+        & img {
+          height: toRem(48);
+        }
+      }
+    }
+
+    & .carousel-indicators {
+      & button {
+        width: toRem(13.88);
+        height: toRem(12.23);
+        &.active {
+          width: toRem(12.23);
+          height: toRem(12.23);
+        }
+      }
+    }
+  }
+}

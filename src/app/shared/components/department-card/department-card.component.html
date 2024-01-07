@@ -1,0 +1,26 @@
+<div
+  class="department-card"
+  [ngStyle]="{
+    background:
+      'transparent url(' +
+      photos[department.title] +
+      ') 0% 0% no-repeat padding-box',
+    'background-size': 'cover',
+    'background-position': 'center center'
+  }"
+>
+  <!-- [routerLink]="['/virtual-program', department.title]" -->
+
+  <ng-content select="[hover]"></ng-content>
+
+  <div class="text-container">
+    <p class="title">{{ department.title }}</p>
+    <!-- <div class="read-more-link">
+      <img
+        src="../../../assets/Fe-kit/svg/arrow-right-white.svg"
+        alt="arrow-right-white-icon"
+      />
+      <p class="read-text">Read more</p>
+    </div> -->
+  </div>
+</div>

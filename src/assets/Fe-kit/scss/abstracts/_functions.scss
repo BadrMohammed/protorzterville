@@ -1,0 +1,22 @@
+@use "sass:math";
+
+@function get-margin($margin) {
+  @return map-get($margins, $margin);
+}
+
+@function get-padding($padding) {
+  @return map-get($paddings, $padding);
+}
+
+@function get-color($color) {
+  @return map-get($colors, $color);
+}
+@function get-border-radius($border-radius) {
+  @return map-get($border-radiuses, $border-radius);
+}
+
+@function toRem($value) {
+  $remValue: calc($value / 16) + rem;
+
+  @return $remValue;
+}

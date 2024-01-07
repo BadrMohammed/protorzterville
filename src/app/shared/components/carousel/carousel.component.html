@@ -1,0 +1,37 @@
+<div class="carousel-container">
+  <carousel [isAnimated]="true" (activeSlideChange)="onSliderChange($event)">
+    <slide *ngFor="let item of photos; let i = index">
+      <div class="image-container">
+        <div class="hover"></div>
+        <img
+          *ngIf="i == counter"
+          [@enter]
+          class="imgFull"
+          src="{{ item.image_url }}"
+          alt="item.title"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="carousel-caption">
+        <div class="container custom-container">
+          <app-navbar></app-navbar>
+        </div>
+
+        <div class="carousel-caption-container container">
+          <div class="text-container">
+            <h1 class="title" [innerHTML]="item.title"></h1>
+            <p class="brief" [innerHTML]="item.brief"></p>
+            <button class="carousel-button" [routerLink]="[item.link.url]">
+              {{ item.link.title }}
+            </button>
+          </div>
+        </div>
+        <button class="explore-buuton" (click)="handleScroll()">
+          <p class="explore-buuton-text">Explore more</p>
+          <img src="../../../../assets/Fe-kit/svg/line.svg" alt="line" />
+        </button>
+      </div>
+    </slide>
+  </carousel>
+</div>

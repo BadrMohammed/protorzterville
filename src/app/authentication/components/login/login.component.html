@@ -1,0 +1,80 @@
+<section class="login-section">
+  <div class="section-container">
+    <div class="text-container">
+      <img
+        class="logo"
+        src="../../../../assets/Fe-kit/images/Logo.png"
+        alt="logo-icon"
+      />
+      <h5 class="title">Log in</h5>
+
+      <div class="form-container">
+        <form [formGroup]="eventLoginForm" (ngSubmit)="onSubmit()">
+          <div class="row d-flex justify-content-center margin0">
+            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-11 col-xs-12">
+              <div class="input-container" *ngFor="let inputProps of loginForm">
+                <div class="form-group">
+                  <label *ngIf="inputProps.title" for="{{ inputProps.name }}">{{
+                    inputProps.title
+                  }}</label>
+                  <input
+                    type="{{ inputProps.type }}"
+                    class="form-control"
+                    id="{{ inputProps.name }}"
+                    placeholder="{{ inputProps.placeholder }}"
+                    required="{{ inputProps.required }}"
+                    formControlName="{{ inputProps.name }}"
+                    min="{{ inputProps.min || null }}"
+                  />
+
+                  <div class="error-message">
+                    {{
+                      getErrorMessage(
+                        this.eventLoginForm.controls[inputProps.name],
+                        inputProps.title
+                      )
+                    }}
+                  </div>
+                </div>
+              </div>
+
+              <app-button
+                [buttonLabel]="'Log in'"
+                [className]="'primary'"
+                [buttonType]="'submit'"
+              ></app-button>
+
+              <p class="register-text">
+                Don't have an account?
+                <span routerLink="/register">Sign Up</span>
+              </p>
+
+              <p class="forget-text" routerLink="/forget-password">
+                Forgot Password?
+              </p>
+              <a class="back-to-home-text" routerLink="/">Back To home</a>
+
+              <div class="h-line">
+                <hr />
+                <div class="text">or</div>
+
+                <hr />
+              </div>
+              <div class="external-container">
+                <div *ngFor="let authType of externalAuth">
+                  <app-external-authentication
+                    [serviceType]="authType"
+                  ></app-external-authentication>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="image-container">
+      <div class="hover"></div>
+    </div>
+  </div>
+</section>

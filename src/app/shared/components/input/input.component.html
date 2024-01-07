@@ -1,0 +1,15 @@
+<div [ngClass]="['form-group', inputContainerClass]">
+  <label *ngIf="inputProps.title" for="{{ inputProps.name }}">{{
+    inputProps.title
+  }}</label>
+  <input
+    type="{{ inputProps.type }}"
+    class="form-control"
+    id="{{ inputProps.name }}"
+    placeholder="{{ inputProps.placeholder }}"
+    required="{{ inputProps.required }}"
+    (change)="inputProps.onChange ? inputProps.onChange() : null"
+  />
+  <!-- formControlName="{{ inputProps.name }}" -->
+  <!-- <div class="invalid-feedback error-message">Please provide a valid city.</div> -->
+</div>

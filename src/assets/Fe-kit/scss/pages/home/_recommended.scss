@@ -1,0 +1,190 @@
+.section-recommended {
+  padding: get-padding(xxxxl) + 12 0;
+  background: get-color("gray");
+  position: relative;
+
+  & .slider-next-button {
+    margin: auto 0;
+    position: absolute;
+    top: 50%;
+    right: 3%;
+    bottom: 50%;
+    width: 40px;
+    height: 40px;
+    z-index: 1000;
+  }
+
+  & .slider-prev-button {
+    margin: auto 0;
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    left: 3%;
+    width: 40px;
+    height: 40px;
+    z-index: 1000;
+  }
+
+  & .recommended-card {
+    @include inline-block-center;
+    width: 100%;
+    height: toRem(597);
+    direction: rtl;
+
+    & .image-container {
+      width: 47%;
+      height: 100%;
+    }
+
+    & .text-container {
+      width: 53%;
+      height: 100%;
+      padding-block: get-padding(xxxxl) + 10 get-padding(xxxxl) + 16;
+      padding-inline: get-padding(xxxl) get-padding(xxxxl) + 38;
+      direction: ltr;
+
+      & .title {
+        font-size: toRem(28);
+        margin-bottom: toRem(32);
+      }
+      & .content {
+        font-size: toRem(20);
+        margin-bottom: toRem(42.5);
+      }
+    }
+  }
+}
+
+// respinsive
+
+@media (min-width: $small_desktop) and (max-width: $medium_desktop) {
+  .section-recommended {
+    padding: get-padding(xxl) 0;
+    position: relative;
+
+    & .slider-next-button,
+    .slider-prev-button {
+      top: 50%;
+      bottom: 50%;
+    }
+    & .slider-next-button {
+      right: 1%;
+    }
+
+    & .slider-prev-button {
+      left: 1%;
+    }
+
+    & .recommended-card {
+      @include inline-block-center;
+      width: 100%;
+      height: fit-content;
+      direction: rtl;
+      height: toRem(400);
+      & .image-container {
+        width: 50%;
+        height: 100%;
+        object-fit: cover;
+        min-height: toRem(400);
+      }
+
+      & .text-container {
+        width: 50%;
+        height: 100%;
+        padding: get-padding(xxl) get-padding(l);
+
+        & .title {
+          font-size: toRem(18);
+          margin-bottom: toRem(22);
+        }
+        & .content {
+          font-size: toRem(14);
+          margin-bottom: toRem(30);
+        }
+      }
+    }
+  }
+}
+@media (min-width: $tablet) and (max-width: $large_tablet) {
+  .section-recommended {
+    padding: get-padding(xxl) 0;
+    position: relative;
+
+    & .slider-next-button,
+    .slider-prev-button {
+      top: 60%;
+      bottom: 40%;
+    }
+    & .slider-next-button {
+      right: 5%;
+    }
+
+    & .slider-prev-button {
+      left: 5%;
+    }
+
+    & .recommended-card {
+      @include inline-block-center;
+      width: 100%;
+      height: fit-content;
+      direction: ltr;
+      height: toRem(400);
+      & .image-container {
+        width: 50%;
+        height: 100%;
+        object-fit: cover;
+        min-height: toRem(400);
+      }
+
+      & .text-container {
+        width: 50%;
+        height: 100%;
+        padding: get-padding(xxl) get-padding(l);
+
+        & .title {
+          font-size: toRem(18);
+          margin-bottom: toRem(22);
+        }
+        & .content {
+          font-size: toRem(14);
+          margin-bottom: toRem(30);
+        }
+      }
+    }
+  }
+}
+@media (min-width: $small_mobile) and (max-width: $mobile) {
+  .section-recommended {
+    padding: get-padding(xxl) 0;
+    position: relative;
+
+    & .recommended-card {
+      @include column-block-center;
+      width: 100%;
+      height: fit-content;
+      direction: ltr;
+
+      & .image-container {
+        width: 100%;
+        height: toRem(350);
+        min-height: toRem(350);
+        object-fit: cover;
+      }
+
+      & .text-container {
+        width: 100%;
+        height: fit-content;
+        padding: get-padding(xxl) get-padding(l);
+
+        & .title {
+          font-size: toRem(18);
+          margin-bottom: toRem(22);
+        }
+        & .content {
+          font-size: toRem(14);
+          margin-bottom: toRem(30);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+<div
+  class="btn-group dropdown-container"
+  dropdown
+  container="body"
+  *ngIf="menuItems?.length"
+>
+  <button
+    id="button-menu-dividers"
+    dropdownToggle
+    type="button"
+    class="dropdown-toggle"
+    aria-controls="dropdown-menu-dividers"
+  >
+    {{ title || menuItems[0].title }} <span class="caret"></span>
+  </button>
+  <ul
+    *dropdownMenu
+    role="menu"
+    aria-labelledby="button-menu-dividers"
+    class="dropdown-menu menu"
+  >
+    <li role="menuitem" class="menu-item" *ngFor="let item of menuItems">
+      <a
+        class="dropdown-item"
+        [routerLink]="item.url ? item.url : null"
+        (click)="item?.onClick ? item?.onClick() : null"
+        >{{ item?.title }}</a
+      >
+    </li>
+  </ul>
+</div>

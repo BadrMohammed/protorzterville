@@ -1,0 +1,20 @@
+<div
+  [routerLink]="['/news', newItem?.id]"
+  [ngClass]="['new-card', dimensionClass]"
+>
+  <div [ngClass]="['imgage-container', dimensionClass]">
+    <img [src]="newItem.image_url" [alt]="newItem.title" class="imgFull" />
+  </div>
+  <div class="hover"></div>
+  <div class="title-container">
+    <div class="date-container">
+      <img
+        class="date-icon"
+        src="../../../../assets/Fe-kit/svg/calendar-white.svg"
+        alt="calendar-white-icon"
+      />
+      <span class="ms-2 date-text">{{ newItem.date }}</span>
+    </div>
+    <p [innerHtml]="newItem.title" class="card-title"></p>
+  </div>
+</div>

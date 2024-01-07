@@ -1,0 +1,81 @@
+<nav class="top-nav">
+  <div class="brand">
+    <!-- <button class="menu-button">
+      <img
+        class="imgFull"
+        src="../../../../assets/Fe-kit/svg/menu-primary.svg"
+        alt="menu icon"
+      />
+    </button> -->
+    <div class="navbar-brand" [routerLink]="'/'">
+      <img
+        class="imgFull"
+        src="{{
+          innerWidth <= 1023
+            ? '../../../assets/Fe-kit/images/Logo.png'
+            : '../../../assets/Fe-kit/images/light-logo.png'
+        }}"
+        alt="light-logo"
+      />
+    </div>
+  </div>
+
+  <div class="action-container">
+    <!-- <img
+      class="search-icon"
+      src="{{
+        innerWidth <= 1023
+          ? '../../../assets/Fe-kit/svg/search-primary.svg'
+          : '../../../assets/Fe-kit/svg/search-white.svg'
+      }}"
+      alt="search icon"
+      *ngIf="!isSearchable"
+      (click)="innerWidth <= 1023 ? null : toggleSearch(true)"
+    />
+    <form class="form-inline" *ngIf="isSearchable">
+      <div class="input-group">
+        <div class="input-group-prepend" (click)="toggleSearch(false)">
+          <span class="input-group-text" id="basic-addon1">
+            <i class="bi bi-search"></i>
+          </span>
+        </div>
+        <input
+          type="search"
+          class="form-control"
+          placeholder="Search keyword"
+          aria-label="search"
+        />
+      </div>
+    </form> -->
+    <ul class="navbar-nav header-list">
+      <li class="nav-item">
+        <app-dropdown [menuItems]="languageMenuItems"></app-dropdown>
+      </li>
+
+      <li class="nav-item">
+        <app-dropdown
+          [menuItems]="userMenuItems"
+          [title]="userName"
+          *ngIf="isLoggedIn"
+        ></app-dropdown>
+        <a
+          class="nav-link login-link"
+          [routerLink]="'login'"
+          *ngIf="!isLoggedIn"
+        >
+          <i class="bi bi-person-fill" *ngIf="innerWidth <= 1023"></i>
+          <span *ngIf="innerWidth > 1023"> Sign In</span>
+        </a>
+      </li>
+    </ul>
+    <div class="search-modal" *ngIf="isViewSearch">
+      <app-modal>
+        <div action class="filter-button">
+          <i class="bi bi-filter-square-fill"></i>
+        </div>
+
+        <app-search body [searchClass]="'search-modal-card'"> </app-search>
+      </app-modal>
+    </div>
+  </div>
+</nav>

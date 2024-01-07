@@ -1,0 +1,53 @@
+// respinsive
+
+@media (min-width: $large_desktop) {
+  .container {
+    // max-width: toRem(1749);
+    max-width: toRem(1588);
+  }
+}
+
+@media (min-width: $small_desktop) and (max-width: $medium_desktop) {
+  .rate {
+    margin-bottom: toRem(24);
+    & .rate-text {
+      font-size: toRem(12);
+    }
+    & img {
+      margin-inline-start: toRem(7.78);
+    }
+  }
+}
+@media (min-width: $tablet) and (max-width: $large_tablet) {
+  .custom-container {
+    max-width: 100%;
+    padding: 0;
+  }
+  .rate {
+    margin-bottom: toRem(24);
+    & .rate-text {
+      font-size: toRem(12);
+    }
+    & img {
+      margin-inline-start: toRem(7.78);
+    }
+  }
+}
+// @media (min-width: $large_desktop) and (max-width: $xxl_desktop) {
+// }
+
+@media (min-width: $small_mobile) and (max-width: $mobile) {
+  .container {
+    padding: 0;
+  }
+
+  .rate {
+    margin-bottom: toRem(15);
+    & .rate-text {
+      font-size: toRem(12);
+    }
+    & img {
+      margin-inline-start: toRem(7);
+    }
+  }
+}

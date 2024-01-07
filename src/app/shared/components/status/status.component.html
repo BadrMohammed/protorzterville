@@ -1,0 +1,13 @@
+<div class="div-status">
+  <div [class]="items[status]?.class">
+    <img [src]="items[status]?.url" alt="status" class="imgFull" />
+  </div>
+  <p class="title">{{ items[status]?.title }}</p>
+  <p class="content">{{ items[status]?.content }}</p>
+  <app-button
+    [className]="'primary'"
+    [buttonLabel]="'Back Home'"
+    [buttonTitleClassName]="'button-text'"
+    [routerLink]="['/']"
+  ></app-button>
+</div>

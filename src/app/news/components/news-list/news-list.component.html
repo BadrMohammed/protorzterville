@@ -1,0 +1,29 @@
+<section class="news-list-section">
+  <div class="container" *ngIf="!hasError">
+    <div class="card-container">
+      <div class="card-item" *ngFor="let newItem of news">
+        <app-news-card
+          [newItem]="newItem"
+          [dimensionClass]="'news-card'"
+        ></app-news-card>
+      </div>
+    </div>
+
+    <div class="more-button">
+      <button>
+        <p>More News</p>
+        <div class="img-container">
+          <img
+            src="../../../../assets/Fe-kit/svg/bottom-arrow-white.png"
+            alt="bottom-arrow-white"
+          />
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <app-status
+    *ngIf="!news?.length"
+    status="{{ hasError ? 'Error' : 'No Content' }}"
+  ></app-status>
+</section>

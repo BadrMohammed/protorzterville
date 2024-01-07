@@ -1,0 +1,9 @@
+<div (click)="openModal(template)">
+  <ng-content select="[action]"></ng-content>
+</div>
+
+<ng-template #template>
+  <div class="modal-body" className="full-modal">
+    <ng-content select="[body]"></ng-content>
+  </div>
+</ng-template>
