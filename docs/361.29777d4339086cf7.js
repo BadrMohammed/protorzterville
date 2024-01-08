@@ -97,7 +97,7 @@
               [1, "search-result-text"],
               [
                 "src",
-                "../../../../assets/Fe-kit/svg/search-result-secondary.svg",
+                "assets/Fe-kit/svg/search-result-secondary.svg",
                 "alt",
                 "search result icon",
               ],
@@ -293,12 +293,7 @@
                   [3, "className", "buttonLabel"],
                   [1, "rate"],
                   [1, "rate-text"],
-                  [
-                    "src",
-                    "../../../../assets/Fe-kit/svg/star.svg",
-                    "alt",
-                    "star-icon",
-                  ],
+                  ["src", "assets/Fe-kit/svg/star.svg", "alt", "star-icon"],
                   [1, "title"],
                   [1, "details"],
                   [1, "item"],

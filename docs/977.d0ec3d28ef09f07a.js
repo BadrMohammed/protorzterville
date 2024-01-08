@@ -396,8 +396,7 @@
                     category_id: "",
                     category_name: "Sharm el Sheikh",
                   },
-                  image_url:
-                    "../../../../assets/Fe-kit/images/governorates/sharm.jpg",
+                  image_url: "assets/Fe-kit/images/governorates/sharm.jpg",
                   date: "",
                   start_date: "15-1-2024",
                   end_date: "20-1-24",
@@ -797,8 +796,7 @@
                       brief:
                         "Karnak or the Karnak Temple Complex, which is known as the Karnak Temple, is a group of temples, buildings and columns",
                       title: "Karnak Temple,Luxor",
-                      image_url:
-                        "../../../../assets//Fe-kit/images/governorates/luxor.jpg",
+                      image_url: "assets//Fe-kit/images/governorates/luxor.jpg",
                       link: {
                         url: "",
                         title: "Explore more",
@@ -812,7 +810,7 @@
                         "The Abu Simbel Temples is the most famous in all of Egypt after the Giza Pyramids,dedicated to Ramses II and his wife. Know more about the twin temples!",
                       title: "Abu Simbel,Aswan",
                       image_url:
-                        "../../../../assets//Fe-kit/images/governorates/aswan2.jpg",
+                        "assets//Fe-kit/images/governorates/aswan2.jpg",
                       link: {
                         url: "",
                         title: "Explore more",
