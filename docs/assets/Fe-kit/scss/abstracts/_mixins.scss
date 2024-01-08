@@ -1,0 +1,39 @@
+@mixin hover {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin zero-dimensions {
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  top: 0px;
+}
+
+@mixin inline-block {
+  display: flex;
+  flex-direction: row;
+}
+@mixin column-block {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin inline-block-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin column-block-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,211 @@
+.login-section {
+  position: absolute;
+  width: 100%;
+  background-color: get-color("white");
+  height: 100%;
+
+  & .section-container {
+    width: 100%;
+    height: 100%;
+    @include inline-block;
+
+    & .text-container {
+      width: 40%;
+      height: 100%;
+      padding-top: get-padding(xxxxl);
+      padding-bottom: get-padding(xxxxl) + get-padding(l);
+      text-align: center;
+
+      & .logo {
+        margin-bottom: toRem(68);
+      }
+
+      & .title {
+        font: normal normal 600 toRem(40) "Poppins-Regular";
+        color: get-color("primary");
+        margin-bottom: toRem(25);
+      }
+
+      & .form-container {
+        width: 100%;
+        & .input-container {
+          text-align: start;
+        }
+        & .primary {
+          width: 100%;
+          height: toRem(64);
+          margin-top: get-margin(xxxl);
+        }
+        & .register-text {
+          font: normal normal normal toRem(16) "OpenSans-Regular";
+          color: get-color("meduim-gray");
+          margin-top: toRem(29);
+
+          & span {
+            color: get-color("secondary");
+            cursor: pointer;
+          }
+        }
+        & .forget-text {
+          color: get-color("secondary");
+          cursor: pointer;
+        }
+
+        & .h-line {
+          @include inline-block-center;
+          width: 100%;
+          gap: toRem(10);
+          color: get-color("hr-line-color");
+
+          & .text {
+            @include inline-block-center;
+            height: 100%;
+          }
+
+          & hr {
+            width: 48%;
+          }
+        }
+
+        & .external-container {
+          @include inline-block-center;
+          gap: toRem(20);
+          // flex-wrap: wrap;
+          & .primary {
+            width: toRem(250);
+          }
+        }
+      }
+    }
+    & .image-container {
+      width: 60%;
+      height: toRem(978);
+      background: transparent url(../../../Fe-kit/images/sign-banner.png) 0% 0%
+        no-repeat padding-box;
+      background-size: cover;
+      background-position: center center;
+      position: relative;
+
+      & .hover {
+        @include hover;
+        background: transparent
+          linear-gradient(48deg, #13276b 0%, #00000000 100%) 0% 0% no-repeat
+          padding-box;
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+//respinsive
+
+@media (min-width: $small_desktop) and (max-width: $medium_desktop) {
+  .login-section {
+    & .section-container {
+      & .text-container {
+        & .logo {
+          margin-bottom: toRem(28);
+        }
+
+        & .title {
+          margin-bottom: toRem(15);
+        }
+
+        & .form-container {
+          width: 100%;
+          & .input-container {
+            text-align: start;
+          }
+          & .primary {
+            height: toRem(44);
+            margin-top: get-margin(xxxl);
+          }
+          & .register-text {
+            margin-top: toRem(20);
+          }
+
+          & .external-container {
+            & .primary {
+              width: toRem(200);
+              height: toRem(44);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: $tablet) and (max-width: $large_tablet) {
+  .login-section {
+    position: static;
+    & .section-container {
+      & .text-container {
+        width: 100%;
+
+        & .logo {
+          width: toRem(140);
+          margin-bottom: toRem(38);
+        }
+
+        & .title {
+          font-size: toRem(22);
+          margin-bottom: toRem(20);
+        }
+
+        & .form-container {
+          width: 100%;
+
+          & .primary {
+            height: toRem(44);
+            margin-top: get-margin(xxl);
+          }
+          & .register-text {
+            margin-top: toRem(20);
+          }
+        }
+      }
+      & .image-container {
+        display: none;
+      }
+    }
+  }
+}
+@media (min-width: $small_mobile) and (max-width: $mobile) {
+  .login-section {
+    position: static;
+    & .section-container {
+      & .text-container {
+        width: 100%;
+
+        & .logo {
+          width: toRem(90);
+          margin-bottom: toRem(38);
+        }
+
+        & .title {
+          font-size: toRem(22);
+          margin-bottom: toRem(20);
+        }
+
+        & .form-container {
+          width: 100%;
+
+          & .primary {
+            height: toRem(44);
+            margin-top: get-margin(xxl);
+          }
+          & .register-text {
+            margin-top: toRem(20);
+          }
+
+          & .external-container {
+            @include column-block-center;
+          }
+        }
+      }
+      & .image-container {
+        display: none;
+      }
+    }
+  }
+}

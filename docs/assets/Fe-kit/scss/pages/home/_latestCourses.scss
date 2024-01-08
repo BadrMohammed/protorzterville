@@ -1,0 +1,52 @@
+.section-latest {
+  padding: get-padding(xxxxl) 0;
+  background: get-color("white");
+
+  & .card-container {
+    @include inline-block;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    gap: toRem(28);
+    flex-wrap: wrap;
+
+    & .card-item {
+      width: 31%;
+    }
+  }
+}
+
+// respinsive
+
+@media (min-width: $small_desktop) and (max-width: $medium_desktop) {
+  .section-latest {
+    & .card-container {
+      & .card-item {
+        width: 31.5%;
+      }
+    }
+  }
+}
+@media (min-width: $tablet) and (max-width: $large_tablet) {
+  .section-latest {
+    & .card-container {
+      @include inline-block-center;
+      gap: toRem(42);
+      width: 100%;
+      & .card-item {
+        width: 46.5%;
+      }
+    }
+  }
+}
+@media (min-width: $small_mobile) and (max-width: $mobile) {
+  .section-latest {
+    & .card-container {
+      @include column-block;
+      width: 100%;
+      & .card-item {
+        width: 100%;
+      }
+    }
+  }
+}

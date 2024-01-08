@@ -1,0 +1,521 @@
+.department-list-section {
+  & .card-container {
+    @include inline-block-center;
+    width: 100%;
+    gap: toRem(42);
+    margin-top: toRem(31.77);
+    flex-wrap: wrap;
+
+    & .card-item {
+      width: 31.1%;
+      height: toRem(498);
+
+      & .department-card {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        & .text-container {
+          margin-inline-start: toRem(47);
+          & .title {
+            margin-bottom: toRem(23);
+          }
+        }
+
+        & .hover {
+          @include hover;
+          background: transparent url("../../images/hover.png") 0% 0% no-repeat
+            padding-box;
+          z-index: 2;
+        }
+      }
+    }
+  }
+}
+
+.department-details-section {
+  padding: get-padding(xxxl) 0;
+
+  & .container {
+    & .selected-course {
+      @include column-block;
+      margin-bottom: toRem(64);
+      width: toRem(1173);
+      height: fit-content;
+      & .text-container {
+        margin-bottom: toRem(30);
+
+        & .actions {
+          @include inline-block;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: toRem(10);
+
+          & .buttons {
+            @include inline-block;
+            gap: toRem(16);
+
+            & .secondary {
+              width: toRem(202);
+              height: toRem(44);
+              border-color: get-color("light-gray");
+            }
+
+            & .category-button {
+              background-color: get-color("light-gray");
+            }
+          }
+
+          & .rate {
+            margin: 0;
+          }
+        }
+        & .title {
+          color: get-color("primary");
+          font: normal normal bold toRem(28) "Poppins-bold";
+          margin-bottom: toRem(27);
+        }
+
+        & .details {
+          @include inline-block;
+          flex-wrap: wrap;
+          gap: toRem(40);
+          & .item {
+            @include inline-block;
+            gap: toRem(4);
+
+            & p {
+              margin: 0;
+              font: normal normal normal toRem(18) "OpenSans-Regular";
+            }
+            & .key {
+              color: get-color("details-color");
+            }
+
+            & .value {
+              color: get-color("primary");
+            }
+          }
+        }
+      }
+
+      & .image-container {
+        width: 100%;
+        height: toRem(764);
+        object-fit: cover;
+        border-radius: inherit;
+
+        & img {
+          border-radius: get-border-radius(s);
+        }
+      }
+    }
+    & .column {
+      margin-bottom: toRem(42);
+      & .course-card {
+        @include inline-block;
+        width: toRem(1093);
+        height: toRem(358);
+        border: 1px solid get-color("light-gray");
+
+        & .image-container {
+          width: toRem(620);
+          max-height: 100%;
+
+          & .badge-container {
+            @include inline-block-center;
+            padding-block: get-padding(xxxl) + 2;
+            gap: toRem(16);
+
+            & .badge-course {
+              display: flex;
+            }
+          }
+        }
+        & .text-container {
+          padding-block: get-padding(xxl) get-padding(s) + 2 get-padding(xxxxl)
+            get-padding(m) + 4;
+          padding-inline: get-padding(xxxxl);
+          & .date-session-container {
+            & .session {
+              display: none;
+            }
+          }
+
+          & .title {
+            margin-bottom: toRem(29);
+          }
+          & .content {
+            margin-bottom: toRem(30);
+          }
+
+          & hr {
+            display: none;
+          }
+          & .course-card-footer {
+            & .rate {
+              display: none;
+            }
+            & .course-card-button {
+              justify-content: flex-start;
+              & .secondary {
+                width: toRem(195);
+                height: toRem(44);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//respinsive
+
+@media (min-width: $small_desktop) and (max-width: $medium_desktop) {
+  .department-list-section {
+    padding: get-padding(xl) 0;
+
+    & .card-container {
+      @include inline-block-center;
+      gap: toRem(20);
+
+      & .card-item {
+        width: 32%;
+        height: fit-content;
+
+        & .department-card {
+          width: 100%;
+          height: toRem(384);
+          position: relative;
+          & .text-container {
+            margin-inline-start: toRem(25);
+          }
+        }
+      }
+    }
+  }
+
+  .department-details-section {
+    padding: get-padding(xxxl) 0;
+
+    & .container {
+      & .selected-course {
+        margin-bottom: toRem(44);
+        width: 70%;
+        & .text-container {
+          margin-bottom: toRem(30);
+
+          & .actions {
+            margin-bottom: toRem(10);
+
+            & .buttons {
+              gap: toRem(16);
+
+              & .secondary {
+                width: toRem(173);
+                height: toRem(44);
+              }
+            }
+          }
+          & .title {
+            font-size: toRem(16);
+            margin-bottom: toRem(10);
+          }
+
+          & .details {
+            gap: toRem(20);
+            & .item {
+              @include inline-block;
+              & p {
+                font-size: toRem(14);
+              }
+            }
+          }
+        }
+
+        & .image-container {
+          height: toRem(464);
+        }
+      }
+      & .column {
+        margin-bottom: toRem(32);
+        & .course-card {
+          width: 70%;
+          height: toRem(280);
+
+          & .image-container {
+            height: 100%;
+
+            & .badge-container {
+              @include inline-block-center;
+              gap: toRem(10);
+
+              & .label {
+                width: toRem(150);
+                height: toRem(25);
+              }
+            }
+          }
+          & .text-container {
+            padding-inline: get-padding(xxl);
+
+            & .title {
+              font-size: toRem(16);
+              margin-bottom: toRem(10);
+            }
+            & .content {
+              font-size: toRem(12);
+              margin-bottom: toRem(14.5);
+            }
+
+            & .course-card-footer {
+              & .course-card-button {
+                & .secondary {
+                  width: toRem(173);
+                  height: toRem(44);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: $tablet) and (max-width: $large_tablet) {
+  .department-list-section {
+    padding: get-padding(xl) 0;
+
+    & .card-container {
+      @include inline-block-center;
+      width: 100%;
+      gap: toRem(25);
+
+      & .card-item {
+        width: 47%;
+        height: fit-content;
+
+        & .department-card {
+          width: 100%;
+          height: toRem(317);
+          position: relative;
+          & .text-container {
+            margin-inline-start: toRem(25);
+          }
+        }
+      }
+    }
+  }
+
+  .department-details-section {
+    padding: get-padding(xxxl) 0;
+
+    & .container {
+      & .selected-course {
+        margin-bottom: toRem(40);
+        width: 100%;
+
+        & .text-container {
+          padding-inline: get-padding(l);
+          margin-bottom: toRem(20);
+
+          & .actions {
+            margin-bottom: toRem(10);
+
+            & .buttons {
+              & .secondary {
+                width: toRem(148);
+                height: toRem(34);
+
+                & p {
+                  font-size: toRem(14);
+                }
+              }
+            }
+          }
+          & .title {
+            font-size: toRem(18);
+            margin-bottom: toRem(10);
+          }
+
+          & .details {
+            gap: toRem(20);
+            & .item {
+              & p {
+                font-size: toRem(14);
+              }
+            }
+          }
+        }
+
+        & .image-container {
+          width: 100%;
+          height: toRem(400);
+          object-fit: contain;
+
+          & img {
+            border-radius: 0;
+          }
+        }
+      }
+      & .column {
+        & .course-card {
+          @include inline-block;
+          align-items: center;
+          width: 100%;
+          height: fit-content;
+
+          & .image-container {
+            width: 100%;
+            height: toRem(316);
+
+            & .badge-container {
+              @include inline-block-center;
+              padding-block: get-padding(xxxl) + 2;
+              gap: toRem(10);
+
+              & .label {
+                width: toRem(140);
+              }
+            }
+          }
+          & .text-container {
+            padding-inline: get-padding(l);
+            & .course-card-footer {
+              & .course-card-button {
+                & .secondary {
+                  width: toRem(148);
+                  height: toRem(34);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: $small_mobile) and (max-width: $mobile) {
+  .department-list-section {
+    padding: get-padding(xl) 0;
+
+    & .card-container {
+      @include column-block;
+      width: 100%;
+      gap: toRem(25);
+
+      & .card-item {
+        width: 100%;
+        height: fit-content;
+
+        & .department-card {
+          width: 100%;
+          height: toRem(317);
+          position: relative;
+          & .text-container {
+            margin-inline-start: toRem(25);
+          }
+        }
+      }
+    }
+  }
+
+  .department-details-section {
+    padding: get-padding(xxxl) 0;
+
+    & .container {
+      & .selected-course {
+        margin-bottom: toRem(40);
+        width: 100%;
+
+        & .text-container {
+          padding-inline: get-padding(l);
+          margin-bottom: toRem(20);
+
+          & .actions {
+            @include column-block;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: toRem(10);
+            gap: toRem(10);
+
+            & .buttons {
+              @include inline-block;
+              justify-content: space-between;
+
+              & .secondary {
+                width: toRem(148);
+                height: toRem(34);
+
+                & p {
+                  font-size: toRem(14);
+                }
+              }
+            }
+          }
+          & .title {
+            font-size: toRem(18);
+            margin-bottom: toRem(4);
+          }
+
+          & .details {
+            @include column-block;
+            gap: toRem(10);
+            & .item {
+              @include inline-block;
+
+              & p {
+                font-size: toRem(14);
+              }
+            }
+          }
+        }
+
+        & .image-container {
+          width: 100%;
+          height: toRem(400);
+          object-fit: contain;
+
+          & img {
+            border-radius: 0;
+          }
+        }
+      }
+      & .column {
+        margin-bottom: toRem(20);
+        & .course-card {
+          @include column-block;
+          width: 100%;
+          height: fit-content;
+          padding-bottom: get-padding(xl);
+
+          & .image-container {
+            width: 100%;
+            height: toRem(316);
+
+            & .badge-container {
+              @include inline-block-center;
+              padding-block: get-padding(xxxl) + 2;
+              gap: toRem(6);
+
+              & .label {
+                width: toRem(140);
+              }
+            }
+          }
+          & .text-container {
+            padding-inline: get-padding(s);
+            & .course-card-footer {
+              & .course-card-button {
+                & .secondary {
+                  width: toRem(148);
+                  height: toRem(34);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

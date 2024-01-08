@@ -1,0 +1,78 @@
+$colors: (
+  "primary": #2437ac,
+  "meduim-blue": #253776,
+  "dark-blue": #13276b,
+  "light-blue": #00b8ff,
+  "secondary": #f016b4,
+  "white": #ffffff,
+  "black": #000000,
+  "meduim-black": #303030,
+  "gray": #efefef,
+  "meduim-gray": #525252,
+  "half-gray": #7e7e7e,
+  "light-gray": #dfdfdf,
+  "secondary-gray": #f6f6f6,
+  "secondary2-grey": #f5f5f5,
+  "low-opacity-gray": #ffffff87,
+  "placholder-color": #b9b9b9,
+  "checkbox-border": #707070,
+  "hr-line-color": #b4b4b4,
+  "danger": red,
+  // "background-gray": #e6e6e6,,,,,,,,,
+  "details-color": #878787,
+);
+
+$margins: (
+  s: 5px,
+  m: 10px,
+  l: 15px,
+  xl: 20px,
+  xxl: 30px,
+  xxxl: 40px,
+  xxxxl: 50px,
+);
+
+$paddings: (
+  s: 5px,
+  m: 10px,
+  l: 15px,
+  xl: 20px,
+  xxl: 30px,
+  xxxl: 40px,
+  xxxxl: 50px,
+);
+
+$border-radiuses: (
+  s: 5px,
+  m: 10px,
+  l: 15px,
+  xl: 20px,
+  xxl: 30px,
+  xxxl: 40px,
+  xxxxl: 50px,
+);
+
+$small_mobile: 320px;
+$medium_mobile: 360px;
+$mobile: 600px;
+
+$tablet: 601px;
+$large_tablet: 1023px;
+
+$small_desktop: 1024px;
+$desktop: 1200px;
+$medium_desktop: 1440px;
+$large_desktop: 1910px;
+
+$ultrawide_desktop: 2560px;
+$xxl_desktop: 3840px;
+
+//respinsive
+
+// @media (min-width: $small_desktop) and (max-width: $medium_desktop) {
+// }
+// @media (min-width: $tablet) and (max-width: $large_tablet) {
+// }
+// @media (min-width: $small_mobile) and (max-width: $mobile) {
+
+// }

@@ -1,0 +1,379 @@
+.course-card {
+  width: 100%;
+  // width: 26%;
+  max-height: toRem(860);
+  margin-bottom: toRem(50);
+
+  & .badge-container {
+    @include inline-block;
+    background-color: transparent;
+    gap: toRem(12);
+    height: toRem(40);
+    padding: get-padding(xxl);
+    & .label {
+      @include inline-block-center;
+      width: toRem(150);
+      height: toRem(40);
+      background-color: get-color("white");
+      padding: get-padding(xl) get-padding(xxl);
+      font: normal normal normal toRem(16) "Segoe-UI";
+      z-index: 4;
+      color: get-color("primary");
+      border-radius: get-border-radius(xxxl);
+      border: 1px solid #fff;
+    }
+
+    & .badge-course {
+      padding: get-padding(xl) get-padding(xxl);
+      @include inline-block-center;
+      background-color: transparent;
+      color: get-color("white");
+      width: toRem(168);
+      display: none;
+    }
+  }
+
+  & .label2 {
+    @include inline-block-center;
+    background-color: get-color("primary");
+    position: static;
+    color: get-color("white");
+    margin-bottom: toRem(54);
+    font: normal normal normal toRem(18) "Segoe-UI";
+    padding: get-padding(m) + 2 get-padding(xxxxl) + get-padding(l);
+    min-width: toRem(230);
+    width: fit-content;
+    word-wrap: break-word;
+    min-height: toRem(48);
+    z-index: 4;
+    border-radius: get-border-radius(xxxl);
+    border: 1px solid get-color("primary");
+  }
+  & .image-container {
+    width: 100%;
+    height: toRem(499);
+    position: relative;
+    object-fit: cover;
+
+    & .hover {
+      @include hover;
+      background: transparent
+        linear-gradient(153deg, #13276b 0%, #00000000 100%) 0% 0% no-repeat
+        padding-box;
+    }
+  }
+
+  & .text-container {
+    background-color: get-color("white");
+
+    & .date-session-container {
+      @include inline-block-center;
+      justify-content: space-between;
+      margin-top: toRem(22);
+      margin-bottom: toRem(20.7);
+
+      & p {
+        font: normal normal normal toRem(17) "OpenSans-Regular";
+        color: get-color("half-gray");
+        margin: 0;
+        margin-inline-start: toRem(10);
+      }
+
+      & .date {
+        @include inline-block-center;
+      }
+
+      & .session {
+        @include inline-block;
+        align-items: center;
+        justify-content: flex-start;
+      }
+    }
+
+    & .date-session-container2 {
+      justify-content: flex-start;
+      margin-bottom: toRem(25);
+
+      & .session {
+        margin-inline-start: 2rem;
+      }
+    }
+
+    & .title {
+      color: get-color("primary");
+      font: normal normal bold toRem(28) "Poppins-bold";
+      margin-bottom: toRem(10);
+    }
+
+    & .content {
+      font: normal normal normal toRem(20) "OpenSans-Regular";
+      color: get-color("half-gray");
+      margin-bottom: toRem(19.8);
+    }
+    & .course-card-footer {
+      align-items: center;
+      justify-content: space-between;
+
+      & .course-card-button {
+        @include inline-block-center;
+      }
+      & .course-card-button2 {
+        margin-top: 0px;
+      }
+    }
+
+    & .course-card-footer2 {
+      display: flex;
+
+      & .secondary {
+        width: toRem(195);
+        height: toRem(44);
+      }
+    }
+    & .line {
+      margin-bottom: toRem(24);
+    }
+    & .line2 {
+      margin-top: 2.5rem;
+      margin-bottom: toRem(43.5);
+    }
+  }
+}
+
+//respinsive
+
+@media (min-width: $small_desktop) and (max-width: $medium_desktop) {
+  .course-card {
+    margin-bottom: toRem(30);
+
+    & .badge-container {
+      & .label {
+        padding: get-padding(7) get-padding(23);
+        width: toRem(112);
+        height: toRem(30);
+        font-size: toRem(12);
+      }
+
+      & .badge-course {
+        width: toRem(130);
+      }
+    }
+
+    & .label2 {
+      padding: get-padding(6) get-padding(10);
+      margin-bottom: 1.5rem;
+      position: static;
+      font-size: toRem(16);
+      width: fit-content;
+      word-wrap: break-word;
+      height: toRem(20);
+    }
+    & .image-container {
+      height: toRem(279);
+    }
+
+    & .text-container {
+      & .date-session-container {
+        margin-top: toRem(15);
+        margin-bottom: toRem(27);
+
+        & p {
+          font-size: toRem(12);
+          margin-inline-start: toRem(8);
+        }
+        & img {
+          width: toRem(20);
+        }
+      }
+
+      & .date-session-container2 {
+        justify-content: flex-start;
+
+        & .session {
+          margin-inline-start: 2rem;
+        }
+      }
+
+      & .title {
+        font-size: toRem(16);
+        margin-bottom: toRem(10);
+        min-height: toRem(50);
+      }
+
+      & .content {
+        font-size: toRem(12);
+        margin-bottom: toRem(14.5);
+      }
+
+      & .course-card-footer2 {
+        & .rate {
+          margin: 0;
+        }
+        & .secondary {
+          width: toRem(173);
+          height: toRem(44);
+        }
+      }
+      & .line {
+        margin-bottom: toRem(9.75);
+      }
+      & .line2 {
+        margin-top: 2.5rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+}
+@media (min-width: $tablet) and (max-width: $large_tablet) {
+  .course-card {
+    margin-bottom: toRem(30);
+
+    & .badge-container {
+      & .label {
+        padding: get-padding(7) get-padding(23);
+        width: toRem(112);
+        height: toRem(30);
+        font-size: toRem(12);
+      }
+
+      & .badge-course {
+        width: toRem(130);
+      }
+    }
+
+    & .label2 {
+      padding: get-padding(6) get-padding(10);
+      margin-bottom: 1.5rem;
+      position: static;
+      font-size: toRem(12);
+      width: 100%;
+      height: toRem(20);
+    }
+    & .image-container {
+      height: toRem(279);
+    }
+
+    & .text-container {
+      & .date-session-container {
+        margin-top: toRem(15);
+        margin-bottom: toRem(27);
+
+        & p {
+          font-size: toRem(12);
+          margin-inline-start: toRem(8);
+        }
+        & img {
+          width: toRem(20);
+        }
+      }
+
+      & .date-session-container2 {
+        justify-content: space-between;
+      }
+
+      & .title {
+        font-size: toRem(18);
+        margin-bottom: toRem(10);
+      }
+
+      & .content {
+        font-size: toRem(14);
+        margin-bottom: toRem(14.5);
+      }
+
+      & .course-card-footer2 {
+        & .rate {
+          margin: 0;
+        }
+        & .secondary {
+          width: toRem(173);
+          height: toRem(44);
+        }
+      }
+      & .line {
+        margin-bottom: toRem(9.75);
+      }
+      & .line2 {
+        margin-top: 2.5rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+}
+@media (min-width: $small_mobile) and (max-width: $mobile) {
+  .course-card {
+    margin-bottom: toRem(30);
+
+    & .badge-container {
+      & .label {
+        padding: get-padding(6) get-padding(20);
+        width: toRem(96);
+        height: toRem(25);
+        font-size: toRem(10);
+      }
+      & .badge-course {
+        width: toRem(114);
+      }
+    }
+
+    & .label2 {
+      padding: get-padding(6) get-padding(20);
+      margin-bottom: 1.5rem;
+      position: static;
+      font-size: toRem(10);
+      width: 100%;
+      height: toRem(25);
+    }
+    & .image-container {
+      height: toRem(316);
+    }
+
+    & .text-container {
+      margin-inline: toRem(22);
+
+      & .date-session-container {
+        margin-top: toRem(13.37);
+        margin-bottom: toRem(13.63);
+
+        & p {
+          font-size: toRem(12);
+          margin-inline-start: toRem(5.76);
+        }
+        & img {
+          width: toRem(20);
+        }
+      }
+
+      & .date-session-container2 {
+        justify-content: space-between;
+      }
+
+      & .title {
+        font-size: toRem(18);
+        margin-bottom: toRem(4);
+      }
+
+      & .content {
+        font-size: toRem(14);
+        margin-bottom: toRem(18.8);
+      }
+
+      & .course-card-footer2 {
+        & .rate {
+          margin: 0;
+        }
+        & .secondary {
+          width: toRem(148);
+          height: toRem(34);
+        }
+      }
+      & .line {
+        margin-bottom: toRem(10.47);
+      }
+      & .line2 {
+        margin-top: 2.5rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+}

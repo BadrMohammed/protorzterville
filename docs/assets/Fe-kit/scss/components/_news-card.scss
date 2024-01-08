@@ -1,0 +1,102 @@
+.new-card {
+  position: relative;
+  cursor: pointer;
+
+  & .imgage-container {
+    background-position: center center;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  & .hover {
+    @include hover;
+    background: transparent linear-gradient(360deg, #13276b 0%, #00000000 100%)
+      0% 0% no-repeat padding-box;
+  }
+
+  & .title-container {
+    bottom: 0;
+    position: absolute;
+    padding-block-end: 10%;
+    padding-inline-start: 10%;
+
+    & .date-container {
+      @include inline-block;
+      margin-bottom: toRem(21);
+      align-items: center;
+
+      & .date-text {
+        font: normal normal normal toRem(20) "OpenSans-Regular";
+        color: #ffffff;
+      }
+    }
+
+    & .card-title {
+      font: normal normal bold toRem(26) "Poppins-Regular";
+      color: #ffffff;
+      margin-top: toRem(1);
+    }
+  }
+}
+
+//respinsive
+
+@media (min-width: $small_desktop) and (max-width: $medium_desktop) {
+  .new-card {
+    & .title-container {
+      padding-inline: 8% 4%;
+      & .date-container {
+        margin-bottom: toRem(5);
+
+        & .date-text {
+          font-size: toRem(14);
+          opacity: 0.8;
+        }
+      }
+
+      & .card-title {
+        font-size: toRem(18);
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+@media (min-width: $tablet) and (max-width: $large_tablet) {
+  .new-card {
+    & .title-container {
+      padding-inline-start: 8%;
+      & .date-container {
+        margin-bottom: toRem(5);
+
+        & .date-text {
+          font-size: toRem(12);
+          opacity: 0.8;
+        }
+      }
+
+      & .card-title {
+        font-size: toRem(16);
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+@media (min-width: $small_mobile) and (max-width: $mobile) {
+  .new-card {
+    & .title-container {
+      padding-inline-start: 8%;
+      & .date-container {
+        margin-bottom: toRem(9);
+
+        & .date-text {
+          font-size: toRem(12);
+          opacity: 0.8;
+        }
+      }
+
+      & .card-title {
+        font-size: toRem(16);
+        margin-top: 1rem;
+      }
+    }
+  }
+}

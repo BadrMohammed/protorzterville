@@ -1,0 +1,52 @@
+.menu {
+  @include column-block;
+  height: fit-content !important;
+
+  & .menu-item {
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    & .dropdown-item {
+      font: normal normal normal toRem(18) "OpenSans-Regular";
+      color: get-color("primary");
+    }
+  }
+}
+.dropdown-container {
+  & .dropdown-toggle {
+    background-color: transparent;
+    border: none;
+    color: get-color("white");
+    font: normal normal normal toRem(18) "OpenSans-Regular";
+  }
+}
+
+//respinsive
+
+@media (min-width: $small_desktop) and (max-width: $medium_desktop) {
+  .menu {
+    & .menu-item {
+      & .dropdown-item {
+        font-size: toRem(14);
+      }
+    }
+  }
+}
+@media (min-width: $tablet) and (max-width: $large_tablet) {
+  .menu {
+    & .menu-item {
+      & .dropdown-item {
+        font-size: toRem(14);
+      }
+    }
+  }
+}
+@media (min-width: $small_mobile) and (max-width: $mobile) {
+  .menu {
+    & .menu-item {
+      & .dropdown-item {
+        font-size: toRem(14);
+      }
+    }
+  }
+}

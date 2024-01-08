@@ -1,0 +1,87 @@
+.form-group {
+  margin-bottom: toRem(20);
+  & label {
+    font: normal normal 600 toRem(18) "OpenSans-SemiBold";
+    color: get-color("primary");
+    margin-bottom: toRem(9);
+  }
+
+  & input {
+    width: 100%;
+    height: toRem(49);
+    text-indent: toRem(12);
+
+    & ::placeholder {
+      font: normal normal normal toRem(16) "OpenSans-Regular";
+      color: get-color('placholder-color"');
+    }
+
+    &:active {
+      border-color: get-color("primary");
+      outline-color: get-color("primary");
+      box-shadow: none;
+    }
+
+    &:hover {
+      border-color: get-color("primary");
+      outline-color: get-color("primary");
+      box-shadow: none;
+    }
+    &:focus {
+      border-color: get-color("primary");
+      outline-color: get-color("primary");
+      box-shadow: none;
+    }
+  }
+
+  [type="date"] {
+    background: #fff url(../../svg/calendar-gray.svg) 97% 50% no-repeat;
+    text-indent: 0;
+    text-indent: toRem(6);
+  }
+
+  [type="date"]::-webkit-inner-spin-button {
+    display: none;
+  }
+
+  [type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+  }
+}
+
+.error-message {
+  color: get-color("secondary");
+  text-align: center;
+  margin-top: toRem(4);
+}
+
+//respinsive
+
+@media (min-width: $small_desktop) and (max-width: $medium_desktop) {
+  .form-group {
+    & label {
+      font-size: toRem(14);
+    }
+
+    & input {
+      & ::placeholder {
+        font-size: toRem(14);
+      }
+    }
+  }
+}
+// @media (min-width: $tablet) and (max-width: $large_tablet) {
+// }
+@media (min-width: $small_mobile) and (max-width: $mobile) {
+  .form-group {
+    & label {
+      font-size: toRem(14);
+    }
+
+    & input {
+      & ::placeholder {
+        font-size: toRem(14);
+      }
+    }
+  }
+}

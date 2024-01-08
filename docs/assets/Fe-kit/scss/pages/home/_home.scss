@@ -1,0 +1,57 @@
+.section-carousel {
+  padding: 0px;
+  min-height: toRem(529.5);
+}
+
+.section-title {
+  text-align: center;
+  color: get-color("primary");
+  font: normal normal bold toRem(54) "Poppins-bold";
+  margin-bottom: toRem(15);
+}
+
+.section-content {
+  margin: 0;
+  text-align: center;
+  color: get-color("secondary");
+  font: normal normal normal toRem(22) "Segoe-UI";
+  margin-bottom: toRem(30);
+}
+
+.bootom-section-button {
+  width: 100%;
+  @include inline-block-center;
+  margin-top: 2rem;
+}
+
+// respinsive
+
+@media (min-width: $small_desktop) and (max-width: $medium_desktop) {
+  .section-title {
+    font-size: toRem(44);
+  }
+
+  .section-content {
+    font-size: toRem(18);
+  }
+}
+@media (min-width: $tablet) and (max-width: $large_tablet) {
+  .section-title {
+    margin-bottom: toRem(16);
+    font-size: toRem(32);
+  }
+  .section-content {
+    font-size: toRem(18);
+    margin-bottom: toRem(60);
+  }
+}
+@media (min-width: $small_mobile) and (max-width: $mobile) {
+  .section-title {
+    margin-bottom: toRem(6);
+    font-size: toRem(22);
+  }
+  .section-content {
+    font-size: toRem(12);
+    margin-bottom: toRem(30);
+  }
+}

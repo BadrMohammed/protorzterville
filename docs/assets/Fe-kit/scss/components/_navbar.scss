@@ -1,0 +1,226 @@
+.top-nav {
+  @include inline-block;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-block: get-padding(xl) + 3.5;
+  background-color: transparent;
+
+  & .menu-button {
+    display: none;
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    width: toRem(39);
+    height: toRem(39);
+    & img {
+      object-fit: cover;
+    }
+  }
+
+  & .navbar-brand {
+    width: toRem(122.45);
+    height: toRem(71);
+    & img {
+      object-fit: cover;
+    }
+  }
+
+  & .action-container {
+    @include inline-block-center;
+    gap: toRem(40);
+
+    & .search-icon {
+      cursor: pointer;
+      width: toRem(24);
+      height: toRem(24);
+      transition: background-color 0.5s ease-in-out;
+    }
+
+    & form {
+      transition: background-color 0.5s ease-in-out;
+
+      & .input-group-prepend {
+        cursor: pointer;
+      }
+    }
+
+    & .header-list {
+      @include inline-block-center;
+      gap: toRem(40);
+
+      & .login-link {
+        @include inline-block-center;
+        background: transparent;
+        border: 1px solid get-color("white");
+        border-radius: get-border-radius(xxl);
+        width: toRem(125);
+        height: toRem(42);
+        padding: get-padding(m)-2 get-padding(xl) + 3;
+        font: normal normal normal toRem(20) "OpenSans-Regular";
+        color: get-color("white");
+      }
+    }
+    & .search-modal {
+      display: none;
+
+      & .filter-button {
+        @include inline-block-center;
+        width: toRem(50);
+        height: toRem(50);
+        border: none;
+
+        & i {
+          font-size: toRem(25);
+          color: get-color("primary");
+        }
+      }
+    }
+  }
+}
+
+//respinsive
+
+@media (min-width: $small_desktop) and (max-width: $medium_desktop) {
+  .top-nav {
+    & .navbar-brand {
+      width: toRem(100);
+      height: toRem(100);
+
+      & img {
+        object-fit: contain;
+      }
+    }
+
+    & .action-container {
+      gap: toRem(25);
+
+      & .search-icon {
+        width: toRem(25);
+        height: toRem(25);
+      }
+
+      & .header-list {
+        gap: toRem(25);
+      }
+    }
+  }
+}
+@media (min-width: $tablet) and (max-width: $large_tablet) {
+  .top-nav {
+    background-color: get-color("white");
+    padding-inline: get-padding(xl);
+    height: toRem(80);
+
+    & .brand {
+      @include inline-block;
+      align-items: center;
+      gap: toRem(20);
+
+      & .menu-button {
+        display: flex;
+        & img {
+          object-fit: contain;
+        }
+      }
+      & .navbar-brand {
+        width: toRem(83);
+        height: toRem(83);
+
+        & img {
+          object-fit: contain;
+        }
+      }
+    }
+
+    & .action-container {
+      gap: toRem(20);
+
+      & .search-icon {
+        width: toRem(25);
+        height: toRem(25);
+      }
+
+      & form {
+        display: none;
+      }
+
+      & .header-list {
+        display: none;
+        gap: toRem(20);
+
+        & .login-link {
+          width: toRem(50);
+          height: toRem(50);
+          border-radius: get-border-radius(l);
+        }
+      }
+      & .search-modal {
+        display: flex;
+      }
+    }
+  }
+}
+@media (min-width: $small_mobile) and (max-width: $mobile) {
+  .top-nav {
+    // background-color: get-color("white");
+    // padding-inline: get-padding(xl);
+    height: toRem(80);
+
+    & .brand {
+      @include inline-block;
+      align-items: center;
+      gap: toRem(58);
+      & .menu-button {
+        display: flex;
+        & img {
+          object-fit: contain;
+        }
+      }
+      & .navbar-brand {
+        width: toRem(81);
+        height: toRem(81);
+
+        & img {
+          object-fit: contain;
+        }
+      }
+    }
+
+    & .action-container {
+      gap: toRem(14);
+
+      & .search-icon {
+        width: toRem(20);
+        height: toRem(20);
+      }
+
+      & form {
+        display: none;
+      }
+
+      & .header-list {
+        display: none;
+        gap: toRem(14);
+
+        & .login-link {
+          width: toRem(40);
+          height: toRem(40);
+          border-radius: get-border-radius(l);
+        }
+      }
+
+      & .search-modal {
+        display: flex;
+      }
+    }
+  }
+}
+
+.search-modal-card {
+  box-shadow: none !important;
+  padding: 0 !important;
+  height: fit-content !important;
+}

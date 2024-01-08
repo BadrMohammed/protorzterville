@@ -1,0 +1,98 @@
+.imgFull {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.margin0 {
+  margin: 0;
+}
+
+.explore-buuton {
+  @include column-block-center;
+  position: absolute;
+  bottom: 0px;
+  border: none;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.7);
+
+  &:hover {
+    color: #ffff;
+  }
+
+  & .explore-buuton-text {
+    font-size: toRem(20);
+    font-family: "OpenSans-Light";
+    font-weight: normal;
+  }
+  &:hover img {
+    fill: #fff;
+  }
+  & img {
+    border: 1px solid;
+    fill: rgba(255, 255, 255, 0.7);
+  }
+}
+
+.more-button {
+  @include inline-block-center;
+  width: 100%;
+  margin-top: toRem(50);
+
+  & button {
+    @include inline-block-center;
+    gap: toRem(35);
+    background-color: transparent;
+    border: none;
+
+    & .img-container {
+      @include inline-block-center;
+      width: toRem(38);
+      height: toRem(38);
+      background-color: get-color("secondary");
+    }
+
+    & p {
+      font: normal normal normal toRem(18) "Poppins-Regular";
+      color: get-color("meduim-blue");
+      margin: 0;
+    }
+  }
+}
+
+.search-result-text {
+  @include inline-block;
+  gap: toRem(12.93);
+  & img {
+    width: toRem(36);
+    height: toRem(36);
+  }
+
+  & span {
+    font: normal normal normal toRem(26) "Poppins-Regular";
+    color: get-color("primary");
+  }
+}
+
+.rate {
+  @include inline-block;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0;
+  margin-bottom: toRem(14);
+  & .rate-text {
+    margin: 0;
+    font: normal normal normal toRem(20) "OpenSans-Regular";
+    color: get-color("half-gray");
+  }
+  & img {
+    margin-inline-start: toRem(10);
+  }
+}
+
+.back-to-home-text {
+  color: get-color("primary");
+  font: normal normal normal toRem(16) "Poppins-Regular";
+  cursor: pointer;
+  text-decoration: none;
+}

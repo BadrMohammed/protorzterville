@@ -1,0 +1,116 @@
+.courses-list-section {
+  padding: get-padding(xxxxl) + get-padding(m) 0;
+
+  & .card-container {
+    @include inline-block-center;
+    width: 100%;
+    gap: toRem(40);
+
+    flex-wrap: wrap;
+
+    & .card-item {
+      width: 31%;
+      height: toRem(804);
+
+      & .course-card {
+        & hr,
+        .rate {
+          display: none;
+        }
+        & .badge-container {
+          & .badge-course {
+            display: flex;
+          }
+        }
+
+        & .course-card-button {
+          justify-content: flex-start;
+
+          & .secondary {
+            width: toRem(195);
+            height: toRem(44);
+          }
+        }
+      }
+    }
+  }
+}
+
+//respinsive
+
+@media (min-width: $small_desktop) and (max-width: $medium_desktop) {
+  .courses-list-section {
+    & .card-container {
+      @include inline-block-center;
+      gap: toRem(20);
+
+      & .card-item {
+        width: 32%;
+        height: fit-content;
+        & .course-card {
+          & .badge-container {
+            padding: get-padding(l);
+          }
+          & .course-card-button {
+            & .secondary {
+              width: toRem(173);
+              height: toRem(44);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: $tablet) and (max-width: $large_tablet) {
+  .courses-list-section {
+    & .card-container {
+      @include inline-block-center;
+      width: 100%;
+      gap: toRem(25);
+
+      & .card-item {
+        width: 47%;
+        height: fit-content;
+        & .course-card {
+          & .badge-container {
+            padding: get-padding(l);
+          }
+          & .course-card-button {
+            & .secondary {
+              width: toRem(173);
+              height: toRem(44);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: $small_mobile) and (max-width: $mobile) {
+  .courses-list-section {
+    & .card-container {
+      @include column-block;
+      width: 100%;
+      gap: toRem(25);
+
+      & .card-item {
+        width: 100%;
+        height: fit-content;
+
+        & .badge-container {
+          padding: get-padding(m);
+        }
+
+        & .course-card {
+          & .course-card-button {
+            & .secondary {
+              width: toRem(148);
+              height: toRem(34);
+            }
+          }
+        }
+      }
+    }
+  }
+}

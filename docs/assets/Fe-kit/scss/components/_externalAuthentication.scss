@@ -1,0 +1,49 @@
+.external-auth-contaainer {
+  & .primary {
+    background: get-color("secondary2-grey");
+    border: 1px solid get-color("light-gray");
+    padding-inline: toRem(18);
+    width: toRem(300);
+
+    & .button-container {
+      align-items: center;
+      justify-content: flex-start;
+      gap: toRem(15);
+      width: 100%;
+
+      & .img-container {
+        width: toRem(30);
+      }
+
+      & p {
+        font-size: toRem(11);
+        color: get-color("primary");
+      }
+    }
+  }
+}
+
+@media (min-width: $small_desktop) and (max-width: $medium_desktop) {
+  .external-auth-contaainer {
+    & .primary {
+      padding-inline: toRem(10);
+
+      & .button-container {
+        gap: toRem(10);
+
+        & .img-container {
+          width: toRem(25);
+        }
+
+        & p {
+          font-size: toRem(10);
+        }
+      }
+    }
+  }
+}
+// @media (min-width: $tablet) and (max-width: $large_tablet) {
+// }
+// @media (min-width: $small_mobile) and (max-width: $mobile) {
+
+// }

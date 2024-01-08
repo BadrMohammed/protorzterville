@@ -1,0 +1,325 @@
+.section-departments {
+  @include column-block-center;
+  position: relative;
+  padding: get-padding(xxxxl) 0;
+  height: toRem(930);
+  background: get-color("gray");
+
+  & .background-image {
+    position: absolute;
+    width: 52%;
+    height: toRem(392);
+    left: 2%;
+    top: 0;
+    z-index: 1;
+  }
+  & .parent-container {
+    @include inline-block;
+    position: relative;
+    width: 100%;
+    height: 84%;
+    direction: rtl;
+    align-items: center;
+    justify-content: flex-start;
+
+    & .inner-container {
+      @include inline-block;
+      align-items: center;
+      background: get-color("light-blue");
+      width: 67%;
+      height: 100%;
+      & .text-container {
+        width: 50%;
+        height: toRem(534);
+        margin-inline-start: 8%;
+
+        & .title {
+          font: normal normal bold toRem(50) "Poppins-Bold";
+          color: get-color("meduim-blue");
+          margin-bottom: toRem(24);
+          text-align: end;
+        }
+
+        & .description {
+          font: normal normal normal toRem(28) "OpenSans-Regular";
+          color: get-color("white");
+          margin-bottom: toRem(74);
+          text-align: end;
+        }
+
+        & .button-container {
+          @include inline-block;
+          justify-content: flex-start;
+          & .primary {
+            margin-inline-start: 10%;
+          }
+        }
+      }
+    }
+
+    & .card-container {
+      @include inline-block;
+      position: absolute;
+      width: 50%;
+      height: toRem(788);
+      left: 9.5%;
+
+      & .card-box {
+        height: 100%;
+        width: 33.3%;
+
+        & .card-item {
+          width: 100%;
+        }
+      }
+
+      & .card-box1 {
+        background-color: get-color("light-blue");
+        height: toRem(731.15);
+        z-index: 2;
+      }
+
+      & .card-box2 {
+        @include column-block;
+        background: get-color("gray");
+        justify-content: flex-end;
+      }
+
+      & .card-box3 {
+        @include column-block-center;
+        z-index: 2;
+      }
+    }
+  }
+}
+
+// respinsive
+
+@media (min-width: $small_desktop) and (max-width: $medium_desktop) {
+  .section-departments {
+    @include column-block-center;
+    position: relative;
+    height: 94%;
+    background: get-color("gray");
+
+    & .background-image {
+      position: absolute;
+      width: 52%;
+      height: 40%;
+      left: 2%;
+      top: 0;
+      z-index: 1;
+    }
+    & .parent-container {
+      @include inline-block;
+      position: relative;
+      width: 100%;
+      height: 69%;
+      direction: rtl;
+      align-items: center;
+      justify-content: flex-start;
+
+      & .inner-container {
+        @include inline-block;
+        align-items: center;
+        background: get-color("light-blue");
+        width: 67%;
+        height: 85%;
+        padding-top: get-padding(xxxxl) + 17.65;
+        & .text-container {
+          width: 50%;
+          height: 79%;
+          margin-inline-start: 8%;
+
+          & .title {
+            font-size: toRem(40);
+            margin-bottom: toRem(28);
+          }
+
+          & .description {
+            font-size: toRem(22);
+            margin-bottom: toRem(12);
+            min-height: toRem(93);
+          }
+
+          & .button-container {
+            justify-content: flex-start;
+            & .primary {
+              margin-bottom: toRem(83);
+              margin-inline-start: 0;
+            }
+          }
+        }
+      }
+
+      & .card-container {
+        @include inline-block;
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        left: 9.5%;
+        & .card-box {
+          height: 100%;
+          width: 33.3%;
+          & .card-item {
+            width: 100%;
+            height: 50%;
+          }
+        }
+
+        & .card-box1 {
+          background-color: get-color("light-blue");
+          height: 93%;
+          z-index: 2;
+        }
+
+        & .card-box2 {
+          @include column-block;
+          background: get-color("gray");
+          justify-content: flex-end;
+        }
+
+        & .card-box3 {
+          @include column-block-center;
+          z-index: 2;
+        }
+      }
+    }
+  }
+}
+@media (min-width: $tablet) and (max-width: $large_tablet) {
+  .section-departments {
+    @include column-block;
+    position: relative;
+    padding: 0;
+    height: fit-content;
+    background: get-color("gray");
+    align-items: center;
+    justify-content: center;
+
+    & .background-image {
+      display: none;
+    }
+    & .parent-container {
+      @include column-block;
+      position: relative;
+      width: 100%;
+
+      & .inner-container {
+        @include inline-block-center;
+        background: get-color("light-blue");
+        width: 100%;
+        padding-top: get-padding(xxxxl) + get-padding(xxl) + 2;
+        padding-bottom: get-padding(xxxxl) + get-padding(xxl) + 3;
+        height: fit-content;
+        & .text-container {
+          width: 82%;
+          margin-inline-start: 10%;
+          height: fit-content;
+
+          & .title {
+            font-size: toRem(40);
+            margin-bottom: toRem(18);
+          }
+
+          & .description {
+            font-size: toRem(22);
+            margin-bottom: toRem(12);
+            min-height: toRem(93);
+          }
+
+          & .button-container {
+            justify-content: flex-end;
+            & .primary {
+              margin-bottom: toRem(83);
+              margin-inline-start: 0;
+            }
+          }
+        }
+      }
+
+      & .card-container {
+        @include column-block;
+        position: relative;
+        width: 100%;
+        left: 0;
+        height: fit-content;
+        direction: ltr;
+        padding-bottom: get-padding(xxxxl) + get-padding(xxxl) + 5.4;
+
+        & .card-box {
+          @include inline-block;
+          justify-content: flex-start;
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@media (min-width: $small_mobile) and (max-width: $mobile) {
+  .section-departments {
+    @include column-block;
+    position: relative;
+    padding: 0;
+    height: fit-content;
+    background: get-color("gray");
+    align-items: center;
+    justify-content: center;
+
+    & .background-image {
+      display: none;
+    }
+    & .parent-container {
+      @include column-block;
+      position: relative;
+      width: 100%;
+
+      & .inner-container {
+        @include inline-block-center;
+        background: get-color("light-blue");
+        width: 100%;
+        padding-top: get-padding(xxxl)-1;
+        padding-bottom: get-padding(xxxl) + 5;
+        height: fit-content;
+        & .text-container {
+          width: 82%;
+          margin-inline-start: 2.5%;
+          height: fit-content;
+
+          & .title {
+            font-size: toRem(24);
+            margin-bottom: toRem(12);
+          }
+
+          & .description {
+            font-size: toRem(16);
+            margin-bottom: toRem(29);
+          }
+
+          & .button-container {
+            justify-content: flex-end;
+            & .primary {
+              margin-bottom: toRem(45);
+              margin-inline-start: 0;
+            }
+          }
+        }
+      }
+
+      & .card-container {
+        @include column-block;
+        position: relative;
+        width: 100%;
+        left: 0;
+        height: fit-content;
+        direction: ltr;
+
+        & .card-box {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

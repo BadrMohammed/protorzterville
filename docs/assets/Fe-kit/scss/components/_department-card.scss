@@ -1,0 +1,116 @@
+.department-card {
+  @include inline-block;
+  align-items: flex-end;
+  width: 100%;
+  height: toRem(315);
+  direction: ltr;
+  z-index: 3;
+  // cursor: pointer;
+
+  & .text-container {
+    z-index: 3;
+    margin-inline-start: toRem(28);
+    & .date {
+      @include inline-block;
+      margin-bottom: toRem(16);
+
+      & p {
+        margin: 0;
+        margin-inline-start: toRem(12.75);
+        font: normal normal normal toRem(18) "OpenSans-Regular";
+        color: get-color("white");
+      }
+    }
+    & .title {
+      font: normal normal 800 toRem(40) "Poppins-ExtraBold";
+      color: get-color("white");
+      margin-bottom: toRem(40);
+    }
+    & .read-more-link {
+      display: none;
+    }
+  }
+}
+
+//respinsive
+
+@media (min-width: $small_desktop) and (max-width: $medium_desktop) {
+  .department-card {
+    @include inline-block;
+    align-items: flex-end;
+    width: 100%;
+    // height: 50%;
+    // height: toRem(315);
+    height: 100%;
+    direction: ltr;
+    z-index: 3;
+    & .text-container {
+      margin-inline-start: toRem(20);
+
+      & .title {
+        margin-bottom: toRem(16.55);
+      }
+      & .read-more-link {
+        display: none;
+      }
+    }
+  }
+}
+@media (min-width: $tablet) and (max-width: $large_tablet) {
+  .department-card {
+    @include column-block;
+    align-items: flex-start;
+    justify-content: flex-end;
+    // width: 50%;
+    height: toRem(384);
+    & .text-container {
+      margin-inline-start: toRem(25);
+
+      & .title {
+        margin-bottom: toRem(16.55);
+      }
+
+      & .read-more-link {
+        @include inline-block;
+        cursor: pointer;
+        margin-bottom: toRem(37.45);
+
+        & .read-text {
+          margin: 0;
+          margin-inline-start: toRem(10);
+          font: normal normal normal toRem(17) "Segoe-UI";
+          color: get-color("white");
+        }
+      }
+    }
+  }
+}
+@media (min-width: $small_mobile) and (max-width: $mobile) {
+  .department-card {
+    @include column-block;
+    align-items: flex-start;
+    justify-content: flex-end;
+    width: 100%;
+    height: toRem(317);
+
+    & .text-container {
+      margin-inline-start: toRem(25);
+
+      & .title {
+        margin-bottom: toRem(16.55);
+      }
+      & .read-more-link {
+        @include inline-block;
+        cursor: pointer;
+        margin-bottom: toRem(37.45);
+
+        & .read-text {
+          margin: 0;
+          margin-inline-start: toRem(10);
+          font: normal normal normal toRem(17) "Segoe-UI";
+          color: get-color("white");
+        }
+      }
+    }
+  }
+}
